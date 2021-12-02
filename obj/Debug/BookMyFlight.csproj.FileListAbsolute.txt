@@ -1,2 +1,0 @@
-D:\Dowloads\BookMyFlight\obj\Debug\BookMyFlight.csproj.AssemblyReference.cache
-D:\Dowloads\BookMyFlight\obj\Debug\BookMyFlight.dll.licenses
