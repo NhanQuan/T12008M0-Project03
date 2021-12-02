@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirlineSystem.Controllers
 {
-    public class AirlineSystemController : Controller
+    public class AccountController : Controller
     {
         public IActionResult Index()
         {
