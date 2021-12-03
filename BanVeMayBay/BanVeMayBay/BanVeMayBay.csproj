@@ -560,6 +560,7 @@
     <Compile Include="Models\topic.cs" />
     <Compile Include="Models\user.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Hrllo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config">
