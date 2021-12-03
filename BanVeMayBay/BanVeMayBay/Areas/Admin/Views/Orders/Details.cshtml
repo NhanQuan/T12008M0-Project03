@@ -8,7 +8,7 @@
 <div class="container bg-white">
     <div class="row">
         <div class="col-md-7">
-            <h3>Chi tiết Order</h3>
+            <h3>Detail Order</h3>
             <table class="table border">
                 <tbody>
                     <tr>
@@ -16,7 +16,7 @@
                         <td class="b-id">@Model.ID</td>
                     </tr>
                     <tr>
-                        <td class="title">Tên khách hàng</td>
+                        <td class="title">Passenger</td>
                         <td>@Model.name </td>
                     </tr>
                     <tr>
@@ -24,31 +24,31 @@
                         <td>@Model.email</td>
                     </tr>
                     <tr>
-                        <td class="title">SDT</td>
+                        <td class="title">Phone</td>
                         <td>@Model.phone</td>
                     </tr>
                     <tr>
-                        <td class="title">Số người</td>
+                        <td class="title">Amount of People</td>
                         <td>@Model.guestTotal</td>
                     </tr>
                     <tr>
-                        <td class="title">Giới tính</td>
+                        <td class="title">Gender</td>
                         <td>@Model.gioitinh</td>
                     </tr>
                     <tr>
-                        <td class="title">Quốc tịch</td>
+                        <td class="title">National</td>
                         <td>@Model.quoctich</td>
                     </tr>
                     <tr>
-                        <td class="title">Lời nhắn</td>
+                        <td class="title">Message</td>
                         <td>@Model.mess</td>
                     </tr>
                     <tr>
-                        <td class="title">Ngày tạo</td>
+                        <td class="title">Created Date</td>
                         <td>@Model.created_ate (m/d/y)</td>
                     </tr>
                     <tr>
-                        <td class="title">Tổng tiền:</td>
+                        <td class="title">Total:</td>
                         <td><h4 class="text-danger"> @Model.total.ToString("N0") VND</h4></td>
                     </tr>
                 </tbody>

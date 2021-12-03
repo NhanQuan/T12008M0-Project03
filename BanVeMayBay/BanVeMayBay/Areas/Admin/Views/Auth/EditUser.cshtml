@@ -8,15 +8,15 @@
 @{
     List<SelectListItem> status = new List<SelectListItem>();
 
-    SelectListItem statusitem1 = new SelectListItem() { Value = "1", Text = "Hoạt Động" };
-    SelectListItem statusitem2 = new SelectListItem() { Value = "2", Text = "Chưa Hoạt Động" };
+    SelectListItem statusitem1 = new SelectListItem() { Value = "1", Text = "Active" };
+    SelectListItem statusitem2 = new SelectListItem() { Value = "2", Text = "No Active" };
     status.Add(statusitem1);
     status.Add(statusitem2);
 
     List<SelectListItem> gender = new List<SelectListItem>();
 
-    SelectListItem gendertitem1 = new SelectListItem() { Value = "Nam", Text = "Nam" };
-    SelectListItem gendertitem2 = new SelectListItem() { Value = "Nữ", Text = "Nữ" };
+    SelectListItem gendertitem1 = new SelectListItem() { Value = "Nam", Text = "Male" };
+    SelectListItem gendertitem2 = new SelectListItem() { Value = "Nữ", Text = "Female" };
     gender.Add(gendertitem1);
     gender.Add(gendertitem2);
 
@@ -31,7 +31,7 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="card card-title bg-white p-1 container">
     <div class="row">
-        <div class="col-md-6 "> <h5 class="pl-2 mt-2 text-blues">Chỉnh sửa Thông tin</h5> </div>
+        <div class="col-md-6 "> <h5 class="pl-2 mt-2 text-blues">Edit Information</h5> </div>
     </div>
 </div>
 
