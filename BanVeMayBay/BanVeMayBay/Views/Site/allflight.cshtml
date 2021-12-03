@@ -11,22 +11,22 @@
                 <div class="flight-head">
                     <div class="">
                         <nav aria-label="breadcrumb">
-                            <span style="font-weight:bold; font-size:22px;"><i class="fas fa-fighter-jet"></i> Tất cả chuyến bay </span>
+                            <span style="font-weight:bold; font-size:22px;"><i class="fas fa-fighter-jet"></i> All Flights </span>
 
                         </nav>
                     </div>
                 </div>
-                Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
                 <div class="flight-table">
                     <table>
                         <thead>
                             <tr>
-                                <th>Hãng hàng không</th>
-                                <th>Nơi khởi hành</th>
-                                <th>Nơi đến</th>
-                                <th>Xem chi tiết</th>
+                                <th>AirLine</th>
+                                <th>From</th>
+                                <th>To</th>
+                                <th>Detail</th>
                           
-                                <th>Giá chuyến bay</th>
+                                <th>Price</th>
                                
                             </tr>
                         </thead>
@@ -39,19 +39,19 @@
                                 </td>
                                 <td>
                                     <h6>@item.departure_address</h6>
-                                    <p>Sân bay (@item.departure_address)</p>
+                                    <p>Terminal/Airport (@item.departure_address)</p>
                                 </td>
                                 <td>
                                     <h6>@item.arrival_address</h6>
-                                    <P>Sân bay (@item.arrival_address)</P>
+                                    <P>Terminal/Airport (@item.arrival_address)</P>
                                 </td>
                                 <td>
-                                    <a href="~/chuyen-bay/@item.id">Xem chi tiết</a>
+                                    <a href="~/chuyen-bay/@item.id">Detail</a>
                                 </td>
 
                                 <td>
                                     <h6><strong class="color-red-3">@item.price.ToString("N0") VND</strong></h6>
-                                    <p class="emi">(loại tiền - VND)</p>
+                                    <p class="emi">(currency - VND)</p>
                                 </td>
 
                             </tr>

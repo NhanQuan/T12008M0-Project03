@@ -8,19 +8,19 @@
         </td>
         <td>
             <h6>@item.departure_address</h6>
-            <p>Sân bay (@item.departure_address)</p>
+            <p>Terminal/Airport (@item.departure_address)</p>
         </td>
         <td>
             <h6>@item.arrival_address</h6>
-            <P>Sân bay (@item.arrival_address)</P>
+            <P>Terminal/Airport (@item.arrival_address)</P>
         </td>
         <td>
-            <a href="~/chuyen-bay/@item.id">Xem chi tiết</a>
+            <a href="~/chuyen-bay/@item.id">Detail</a>
         </td>
 
         <td>
             <h6><strong class="color-red-3">@item.price.ToString("N0") VND</strong></h6>
-            <p class="emi">(loại tiền - VND)</p>
+            <p class="emi">(Currency - VND)</p>
         </td>
         <td>
             @Html.RadioButton("datveKH", item.id, new { name = "idTitket", required = "required" })
