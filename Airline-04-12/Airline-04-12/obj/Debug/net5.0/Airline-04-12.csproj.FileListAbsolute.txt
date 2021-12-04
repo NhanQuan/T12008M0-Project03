@@ -306,3 +306,4 @@ C:\Users\ADMIN\Desktop\Airlines Reservation System\SRC\T12008M0-Project03\T12008
 C:\Users\ADMIN\Desktop\Airlines Reservation System\SRC\T12008M0-Project03\T12008M0-Project03\Airline-04-12\Airline-04-12\obj\Debug\net5.0\ref\Airline-04-12.dll
 C:\Users\ADMIN\Desktop\Airlines Reservation System\SRC\T12008M0-Project03\T12008M0-Project03\Airline-04-12\Airline-04-12\obj\Debug\net5.0\Airline-04-12.pdb
 C:\Users\ADMIN\Desktop\Airlines Reservation System\SRC\T12008M0-Project03\T12008M0-Project03\Airline-04-12\Airline-04-12\obj\Debug\net5.0\Airline-04-12.genruntimeconfig.cache
+C:\Users\ADMIN\Desktop\Airlines Reservation System\SRC\T12008M0-Project03\T12008M0-Project03\Airline-04-12\Airline-04-12\obj\Debug\net5.0\Razor\Views\Shared\_layOutSite.cshtml.g.cs
