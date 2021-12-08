@@ -40,7 +40,7 @@ namespace BanVeMayBay.Controllers
                     Session["userName11"] = user.fullname;
                     Session["id"] = user.ID;
                     if (!Response.IsRequestBeingRedirected)
-                        Message.set_flash("Đăng nhập thành công ", "success");
+                        Message.set_flash("Logged in successfully ", "success");
                     return Redirect("~/tai-khoan");
                 }
                 }
@@ -54,7 +54,7 @@ namespace BanVeMayBay.Controllers
             Session["userName11"] = "";
             Session[Common.CommonConstants.CUSTOMER_SESSION]="";
             Response.Redirect("~/dang-nhap");
-            Message.set_flash("Đăng xuất thành công", "success");
+            Message.set_flash("Sign out successful", "success");
         }
         public ActionResult register()
         {
@@ -69,7 +69,7 @@ namespace BanVeMayBay.Controllers
             string Pass2 = Mystring.ToMD5(fc["repsw"]);
             if (Pass2 != Pass)
             {
-                ViewBag.error = "Mật khẩu không khớp";
+                ViewBag.error = "Password incorrect";
                 return View("loginEndRegister");
             }
             string email = fc["email"];
