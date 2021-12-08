@@ -24,32 +24,32 @@
                 <table class="table" style="margin-top:20px;">
                     <tbody>
                         <tr>
-                            <td class="title">Hãng hàng không</td>
+                            <td class="title">Airlines</td>
                             <td> <img src="~/public/images/flight/@Model.airline" alt=""></td>
                         </tr>
                         <tr>
-                            <td class="title">Giá vé</td>
+                            <td class="title">Price</td>
                             <td class="b-id text-danger">@Model.price.ToString("N0") VND</td>
                         </tr>
                         <tr>
-                            <td class="title">Ngày bay</td>
+                            <td class="title">Flight Day</td>
                             <td>@Model.departure_date.ToString("dd-MM-yyyy")</td>
                         </tr>
                         <tr>
-                            <td class="title">Nơi bay</td>
+                            <td class="title">Starting Gate</td>
                             <td>@Model.departure_address</td>
                         </tr>
                         <tr>
-                            <td class="title">Nơi đến</td>
+                            <td class="title">Destination</td>
                             <td>@Model.arrival_address</td>
                         </tr>
                         <tr>
-                            <td class="title">Sân bay</td>
+                            <td class="title">Airport</td>
                             <td>@Model.airport</td>
                         </tr>
                         <tr>
-                            <td class="title">Ghế trống</td>
-                            <td>@Model.guestTotal Ghế</td>
+                            <td class="title">Empty Seat</td>
+                            <td>@Model.guestTotal Seat</td>
                         </tr>
                       
                     </tbody>
