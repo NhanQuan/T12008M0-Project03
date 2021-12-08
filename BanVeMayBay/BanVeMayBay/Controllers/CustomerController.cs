@@ -24,14 +24,14 @@ namespace BanVeMayBay.Controllers
             var pass = user_account.FirstOrDefault()?.password;
                 if (user_account.Count() == 0)
                 {
-                    ViewBag.error = "Tên Đăng Nhập Không Đúng";
+                    ViewBag.error = "Username Incorrect";
                 }
                 else
                 {
                     var pass_account = user_account.Where(m => m.access == 1 && m.status == 1 && m.password == Pass).FirstOrDefault();
                     if (pass_account == null)
                     {
-                        ViewBag.error = "Mật Khẩu Không Đúng";
+                        ViewBag.error = "Incorrect password";
                     }
                     else
                     {
