@@ -80,7 +80,7 @@ namespace BanVeMayBay.Controllers
                 var Luser = db.users.Where(m => m.status == 1 && m.username == uname && m.access == 1);
                 if (Luser.Count() > 0)
                 {
-                    ViewBag.error = "Tên Đăng Nhập đã tồn tại";
+                    ViewBag.error = "Username available";
                     return View("loginEndRegister");
                 }
                 else
@@ -101,12 +101,12 @@ namespace BanVeMayBay.Controllers
                     muser.status = 1;
                     db.users.Add(muser);
                     db.SaveChanges();
-                    Message.set_flash("Đăng ký tài khoản thành công, Đăng nhập ở đây ", "success");
+                    Message.set_flash("Successful account registration, Login here ", "success");
                     return Redirect("~/dang-nhap");
                 }
 
             }
-            Message.set_flash("Đăng ký tài khoản thất bai", "danger");
+            Message.set_flash("Account registration failed", "danger");
             return View("register");
         }
 
