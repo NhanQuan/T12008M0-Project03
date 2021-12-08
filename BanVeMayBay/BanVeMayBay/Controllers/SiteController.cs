@@ -85,7 +85,7 @@ namespace BanVeMayBay.Controllers
             int pageSize = 8;
             ViewBag.url = "chuyen-bay";
             int pageNumber = (page ?? 1);
-            ViewBag.breadcrumb = "Tất cả chuyến bay";
+            ViewBag.breadcrumb = "All Flight";
             var list_flight = db.tickets.Where(m => m.status == 1).ToList();
             return View("allflight", list_flight.ToPagedList(pageNumber, pageSize));
         }
@@ -113,7 +113,7 @@ namespace BanVeMayBay.Controllers
             int pageSize = 8;
             int pageNumber = (page ?? 1);
             ViewBag.url = "tim-kiem-bai-viet?keyw=" + keyw + "";
-            @ViewBag.nameTopic = "Tim kiếm từ khóa: " + keyw;
+            @ViewBag.nameTopic = "Search key: " + keyw;
             var list = db.Posts.Where(m => m.title.Contains(keyw) || m.detail.Contains(keyw)).Where(m => m.status == 1).OrderBy(m => m.ID);
             return View("postOftoPic", list.ToList().ToPagedList(pageNumber, pageSize));
         }
