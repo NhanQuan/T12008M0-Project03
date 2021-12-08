@@ -125,17 +125,17 @@ namespace BanVeMayBay.Controllers
             {
                 if (pswO.ToMD5() != user.password)
                 {
-                    ViewBag.success = "Mật khẩu cũ không đúng.";
+                    ViewBag.success = "Old password is incorrect.";
                     return View("Myaccount", user);
                 }
                 if (pswN == null || pswR == null || pswN.Length < 6 || pswR.Length < 6)
                 {
-                    ViewBag.success = "Mật khẩu mới không hợp lệ.";
+                    ViewBag.success = "Invalid new password.";
                     return View("Myaccount", user);
                 }    
                 if (pswN.ToMD5() != pswR.ToMD5())
                 {
-                    ViewBag.success = "Mật khẩu không khớp.";
+                    ViewBag.success = "Password incorrect.";
                     return View("Myaccount", user);
                 }
                 else
@@ -152,7 +152,7 @@ namespace BanVeMayBay.Controllers
             user.updated_by = 1;
             db.Entry(user).State = EntityState.Modified;
             db.SaveChanges();
-            ViewBag.success = "Cập nhật thành công.";
+            ViewBag.success = "Update successful.";
             return View("Myaccount", user);
         }
         public ActionResult ListOderCus()
@@ -180,7 +180,7 @@ namespace BanVeMayBay.Controllers
             }
             db.orders.Remove(morder);
             db.SaveChanges();
-            Message.set_flash("Đã hủy 1 đơn hàng", "success");
+            Message.set_flash("Canceled 1 order", "success");
             return Redirect("~/tai-khoan");
         }
     }
