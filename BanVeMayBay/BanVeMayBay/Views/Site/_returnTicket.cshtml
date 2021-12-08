@@ -15,12 +15,12 @@
             <P>Sân bay (@item.arrival_address)</P>
         </td>
         <td>
-            <a href="~/chuyen-bay/@item.id">Xem chi tiết</a>
+            <a href="~/chuyen-bay/@item.id">View Details</a>
         </td>
 
         <td>
-            <h6><strong class="color-red-3">@item.price.ToString("N0") VND</strong></h6>
-            <p class="emi">(loại tiền - VND)</p>
+            <h6><strong class="color-red-3">@item.price.ToString("N0") USD</strong></h6>
+            <p class="emi">(currency - USD)</p>
         </td>
         <td>
             @Html.RadioButton("datveKH", item.id, new { name = "idTitket", required = "required" })
