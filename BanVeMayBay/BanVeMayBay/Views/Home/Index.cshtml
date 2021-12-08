@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<BanVeMayBay.Models.ticket>
 @{
-    ViewBag.Title = "Trang Chủ";
+    ViewBag.Title = "Home";
     Layout = "~/Views/Shared/_layOutSite.cshtml";
 }
 <section class="mt_search" style="margin-top:50px !important; ">
@@ -8,12 +8,12 @@
         <div class="search-content-slider">
             <div class="section-title text-center ">
                 <h2>SEARCH FLIGHT</h2>
-                <p>Hà nội, đà nẵng, TP.HCM, Quy nhơn, đà lạt phú quốc giá chỉ từ 899.000đ.</p>
+                <p>Bringing you the best flights.</p>
             </div>
             <form action="~/Site/flightSearch" method="POST" id="form-search">
                 <div class="radio" align="center">
-                    <label><input value="disable" type="radio" id="typeticket" name="typeticket" checked>Vé một Chiều</label>
-                    <label><input value="enable" type="radio" id="typeticket" name="typeticket">Khứ Hồi</label>
+                    <label><input value="disable" type="radio" id="typeticket" name="typeticket" checked>One-way ticket</label>
+                    <label><input value="enable" type="radio" id="typeticket" name="typeticket">Round-trip ticket</label>
                     
                 </div>
                 <input type="hidden" id="ticketCheck" value="" />
@@ -259,7 +259,7 @@
                                 <div class="col-md-12  ">
                                     <div class="table_item " align="center">
                                         <div class="search ">
-                                            <button type="submit" class="btn-blue btn-red ">Tìm Kiếm chuyến bay</button>
+                                            <button type="submit" class="btn-blue btn-red ">Search Flight</button>
                                         </div>
                                     </div>
                                 </div>
@@ -281,12 +281,12 @@
                             <div class="col-md-10">
                                 <nav aria-label="breadcrumb">
                                     @{var Date = ViewBag.dateNow; }
-                                    <span style="font-weight:bold; font-size:22px;color:#ff6a00;"><i class="fas fa-fighter-jet"></i> Các chuyến bay trong ngày: @Date.ToString("dd-MM-yyyy") </span>
+                                    <span style="font-weight:bold; font-size:22px;color:#ff6a00;"><i class="fas fa-fighter-jet"></i> Flights of the day: @Date.ToString("dd-MM-yyyy") </span>
 
                                 </nav>
                             </div>
                           
-                            <div class="col-md-2"> <a href="~/chuyen-bay-trong-ngay" class="btn-blue btn-red btn-style-1 w-100">Xem tất cả</a></div>
+                            <div class="col-md-2"> <a href="~/chuyen-bay-trong-ngay" class="btn-blue btn-red btn-style-1 w-100">View all</a></div>
                         </div>
                     </div>
                    
