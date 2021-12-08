@@ -14,9 +14,9 @@
                     <div class="flight-head">
                         <div class="">
                             <nav aria-label="breadcrumb">
-                                <span style="font-weight:bold; font-size:22px;"><i class="fas fa-fighter-jet"></i> Chọn chuyến đi </span>
-                                <span style="font-weight:bold; color:#ff6a00; font-size:22px;"> @ViewBag.noibay </span> - Đến -<span style="font-weight:bold; color:#ff6a00; font-size:22px;"> @ViewBag.noiVe </span><br />
-                                <span style="font-weight:bold; font-size:22px;"><i class="fas fa-calendar-day"></i> Ngày bay </span>
+                                <span style="font-weight:bold; font-size:22px;"><i class="fas fa-fighter-jet"></i> Choose A Trip </span>
+                                <span style="font-weight:bold; color:#ff6a00; font-size:22px;"> @ViewBag.noibay </span> - Destination -<span style="font-weight:bold; color:#ff6a00; font-size:22px;"> @ViewBag.noiVe </span><br />
+                                <span style="font-weight:bold; font-size:22px;"><i class="fas fa-calendar-day"></i> Flight Day </span>
                                 <span style="font-weight:bold; color:#ff0000; font-size:22px;"> @ViewBag.ngaybay </span>
                             </nav>
                         </div>
@@ -26,11 +26,11 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Hãng hàng không</th>
-                                    <th>Nơi khởi hành</th>
-                                    <th>Nơi đến</th>
-                                    <th>Xem chi tiết</th>
-                                    <th>Giá chuyến bay</th>
+                                    <th>Airline</th>
+                                    <th>Starting Gate</th>
+                                    <th>Destination</th>
+                                    <th>View Details</th>
+                                    <th>Flight Price</th>
                                     <th>#</th>
                                 </tr>
                             </thead>
@@ -50,11 +50,11 @@
                                             <P>Sân bay (@item.arrival_address)</P>
                                         </td>
                                         <td>
-                                            <a href="~/chuyen-bay/@item.id">Xem chi tiết</a>
+                                            <a href="~/chuyen-bay/@item.id">View Details</a>
                                         </td>
                                         <td>
-                                            <h6><strong class="color-red-3">@item.price.ToString("N0") VND</strong></h6>
-                                            <p class="emi">(loại tiền - VND)</p>
+                                            <h6><strong class="color-red-3">@item.price.ToString("N0") USD</strong></h6>
+                                            <p class="emi">(currency - USD)</p>
                                         </td>
                                         <td>
 
@@ -130,7 +130,7 @@
 
                         </div>
 
-                        <button class="btn-blue btn-red btn-style-1 " type="submit">Tiếp theo</button>
+                        <button class="btn-blue btn-red btn-style-1 " type="submit">Next</button>
                     </div>
                 </div>
             </form>
