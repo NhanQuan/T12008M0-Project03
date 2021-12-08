@@ -278,6 +278,5 @@ C:\Users\Thinkpad\AppData\Local\GitHubDesktop\app-2.9.4\T12008M0-Project03\BanVe
 C:\Users\Thinkpad\AppData\Local\GitHubDesktop\app-2.9.4\T12008M0-Project03\BanVeMayBay\BanVeMayBay\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Thinkpad\AppData\Local\GitHubDesktop\app-2.9.4\T12008M0-Project03\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.csproj.AssemblyReference.cache
 C:\Users\Thinkpad\AppData\Local\GitHubDesktop\app-2.9.4\T12008M0-Project03\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.csproj.CoreCompileInputs.cache
-C:\Users\Thinkpad\AppData\Local\GitHubDesktop\app-2.9.4\T12008M0-Project03\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.csproj.CopyComplete
 C:\Users\Thinkpad\AppData\Local\GitHubDesktop\app-2.9.4\T12008M0-Project03\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.dll
 C:\Users\Thinkpad\AppData\Local\GitHubDesktop\app-2.9.4\T12008M0-Project03\BanVeMayBay\BanVeMayBay\obj\Debug\BanVeMayBay.pdb
