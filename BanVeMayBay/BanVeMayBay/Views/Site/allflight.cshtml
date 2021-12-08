@@ -11,7 +11,7 @@
                 <div class="flight-head">
                     <div class="">
                         <nav aria-label="breadcrumb">
-                            <span style="font-weight:bold; font-size:22px;"><i class="fas fa-fighter-jet"></i> Tất cả chuyến bay </span>
+                            <span style="font-weight:bold; font-size:22px;"><i class="fas fa-fighter-jet"></i> All Flight </span>
 
                         </nav>
                     </div>
@@ -21,12 +21,12 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Hãng hàng không</th>
-                                <th>Nơi khởi hành</th>
-                                <th>Nơi đến</th>
-                                <th>Xem chi tiết</th>
+                                <th>Airlines</th>
+                                <th>Starting Gate</th>
+                                <th>Destination</th>
+                                <th>View Details</th>
                           
-                                <th>Giá chuyến bay</th>
+                                <th>Flight Price</th>
                                
                             </tr>
                         </thead>
@@ -46,12 +46,12 @@
                                     <P>Sân bay (@item.arrival_address)</P>
                                 </td>
                                 <td>
-                                    <a href="~/chuyen-bay/@item.id">Xem chi tiết</a>
+                                    <a href="~/chuyen-bay/@item.id">View Details</a>
                                 </td>
 
                                 <td>
-                                    <h6><strong class="color-red-3">@item.price.ToString("N0") VND</strong></h6>
-                                    <p class="emi">(loại tiền - VND)</p>
+                                    <h6><strong class="color-red-3">@item.price.ToString("N0") USD</strong></h6>
+                                    <p class="emi">(currency - USD)</p>
                                 </td>
 
                             </tr>
