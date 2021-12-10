@@ -55,11 +55,11 @@ namespace BanVeMayBay.Areas.Admin.Controllers
                 HttpPostedFileBase file;
                 file = Request.Files["airline"];
                 string filename = file.FileName.ToString();
-                string ExtensionFile = Mystring.GetFileExtension(filename);
-                string namefilenew = Mystring.ToSlug(ticket.departure_date.Year.ToString())+ "." + ExtensionFile;
-                var path = Path.Combine(Server.MapPath("~/Public/images/flight"), namefilenew);
+               // string ExtensionFile = Mystring.GetFileExtension(filename);
+               // string namefilenew = Mystring.ToSlug(ticket.departure_date.Year.ToString())+ "." + ExtensionFile;
+                var path = Path.Combine(Server.MapPath("~/Public/images/flight"), /*namefilenew*/filename);
                 file.SaveAs(path);
-                ticket.airline = namefilenew;
+                ticket.airline = /*namefilenew*/filename;
                 ticket.created_at = DateTime.Now;
                 ticket.updated_at = DateTime.Now;
                 ticket.created_by = int.Parse(Session["Admin_id"].ToString());
