@@ -35,7 +35,7 @@ namespace BanVeMayBay.Models
         public DateTime updated_at { get; set; }
         public int updated_by { get; set; }
         public int status { get; set; }
-        public DateTime departure_time { get; set; }
-        public DateTime arrival_time { get; set; }
+        public TimeSpan departure_time { get; set; }
+        public TimeSpan arrival_time { get; set; }
     }
 }
