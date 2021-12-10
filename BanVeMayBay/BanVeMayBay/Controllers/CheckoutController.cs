@@ -1,4 +1,5 @@
-﻿using BanVeMayBay.Models;
+﻿using BanVeMayBay.Common;
+using BanVeMayBay.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -11,6 +12,44 @@ namespace BanVeMayBay.Controllers
     public class CheckoutController : Controller
     {
         BanVeMayBayDbContext db = new BanVeMayBayDbContext();
+        public ActionResult Invalid()
+        {
+            return View("Invalid");
+        }
+        [HttpPost]
+        public ActionResult login(FormCollection fc)
+        {
+            String Username = fc["username"];
+            string Pass = Mystring.ToMD5(fc["password"]);
+            var user_account = db.users.Where(m => m.access == 1 && m.status == 1 && (m.username == Username));
+            var pass = user_account.FirstOrDefault()?.password;
+            if (user_account.Count() == 0)
+            {
+                ViewBag.error = "Tên Đăng Nhập Không Đúng";
+            }
+            else
+            {
+                var pass_account = user_account.Where(m => m.access == 1 && m.status == 1 && m.password == Pass).FirstOrDefault();
+                if (pass_account == null)
+                {
+                    ViewBag.error = "Mật Khẩu Không Đúng";
+                }
+                else
+                {
+                    var user = user_account.First();
+                    Session.Add(CommonConstants.CUSTOMER_SESSION, user);
+                    Session["userName11"] = user.fullname;
+                    Session["id"] = user.ID;
+                    if (!Response.IsRequestBeingRedirected)
+                        Message.set_flash("Đăng nhập thành công ", "success");
+                    return Redirect("~/Home/Index");
+                }
+            }
+
+            ViewBag.sess = Session["Admin_id"];
+            return View("Login");
+
+        }
         // GET: Checkout
         [HttpPost]
         public ActionResult Index(FormCollection fc)
