@@ -24,7 +24,7 @@ namespace BanVeMayBay.Controllers
 
 
             if (page == null) page = 1;
-            int pageSize = 8;
+            int pageSize = 4;
             int pageNumber = (page ?? 1);
             int songuoi1 = int.Parse(fc["songuoi1"]);
             int songuoi2 = int.Parse(fc["songuoi2"]);
@@ -85,17 +85,19 @@ namespace BanVeMayBay.Controllers
         public ActionResult AllChuyenBay(int? page)
         {
             if (page == null) page = 1;
-            int pageSize = 8;
-            ViewBag.url = "chuyen-bay";
+            int pageSize = 4;
+            var singleC = db.Topics.Where(m => m.status == 1).Where(m => m.status == 1).First();
+            ViewBag.url = "all-chuyen-bay";
             int pageNumber = (page ?? 1);
-            ViewBag.breadcrumb = "Tất cả chuyến bay";
+            //không biết sử dụng
+            //ViewBag.breadcrumb = "Tất cả chuyến bay";//không biết sử dụng
             var list_flight = db.tickets.Where(m => m.status == 1).ToList();
             return View("allflight", list_flight.ToPagedList(pageNumber, pageSize));
         }
         public ActionResult postOftoPic(int? page, string slug)
         {
             if (page == null) page = 1;
-            int pageSize = 8;
+            int pageSize = 4;
             var singleC = db.Topics.Where(m => m.status == 1 && m.slug == slug).Where(m => m.status == 1).First();
             ViewBag.nameTopic = slug;
             ViewBag.url = "tin-tuc/" + slug + "";
@@ -113,7 +115,7 @@ namespace BanVeMayBay.Controllers
         public ActionResult postSearch(string keyw, int? page)
         {
             if (page == null) page = 1;
-            int pageSize = 8;
+            int pageSize = 4;
             int pageNumber = (page ?? 1);
             ViewBag.url = "tim-kiem-bai-viet?keyw=" + keyw + "";
             @ViewBag.nameTopic = "Tim kiếm từ khóa: " + keyw;
