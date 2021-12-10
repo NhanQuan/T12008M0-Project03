@@ -12,11 +12,11 @@
                         <div class="row">
                             @if (Model.Count() > 1)
                             {
-                                <h4 class="text-danger"> VÉ KHỨ HỒI </h4>
+                                <h4 class="text-danger"> Two Way </h4>
                             }
                             else
                             {
-                                <h4 class="text-danger"> VÉ 1 CHIỀU </h4>
+                                <h4 class="text-danger"> One Way </h4>
                             }
                             @{ var sum = 0;}
                             @foreach (var item in Model)
@@ -27,19 +27,19 @@
                                     <table>
                                         <tbody>
                                             <tr>
-                                                <td class="title">Tổng tiền</td>
-                                                <td class="b-id text-danger">@item.price.ToString("N0") VND</td>
+                                                <td class="title">Total</td>
+                                                <td class="b-id text-danger">@item.price.ToString("N0") $</td>
                                             </tr>
                                             <tr>
-                                                <td class="title">Ngày bay</td>
+                                                <td class="title">Departure Date</td>
                                                 <td>@item.departure_date</td>
                                             </tr>
                                             <tr>
-                                                <td class="title">Nơi bay</td>
+                                                <td class="title">From</td>
                                                 <td>@item.departure_address</td>
                                             </tr>
                                             <tr>
-                                                <td class="title">Nơi đến</td>
+                                                <td class="title">To</td>
                                                 <td>@item.arrival_address</td>
                                             </tr>
                                         </tbody>
@@ -49,7 +49,7 @@
                             }
                             @{ sum = sum * (int)ViewBag.songuoi;
                             }
-                            <h3 class="text-danger">Tổng tiền: @sum.ToString("N0") VND</h3>
+                            <h3 class="text-danger">Tổng tiền: @sum.ToString("N0") $</h3>
                         </div>
                     </div>
 
@@ -61,48 +61,48 @@
                         <input type="hidden" value="@sum" name="total" />
                         <div class="row">
                             <div class="form-group col-xs-6">
-                                <label>Sống người:</label>
+                                <label>Amount:</label>
                                 <input type="text" class="form-control" value="@ViewBag.songuoi" disabled>
                                 <input name="guestTotal" type="hidden" class="form-control" value="@ViewBag.songuoi">
                             </div>
                             <div class="form-group col-xs-12">
-                                <label>Tên khách hàng:</label>
-                                <input name="name" type="text" class="form-control" id="Name" placeholder="Tên của bạn." required>
+                                <label>Passenger:</label>
+                                <input name="name" type="text" class="form-control" id="Name" placeholder="Your Name." required>
                             </div>
                             <div class="form-group col-xs-6">
                                 <label>Email:</label>
                                 <input type="email" name="email" class="form-control" id="email" placeholder="abc@xyz.com" required>
                             </div>
                             <div class="form-group col-xs-6 col-left-padding">
-                                <label>SDT của bạn:</label>
+                                <label>Phone:</label>
                                 <input name="phone" type="text" class="form-control" id="phnumber" placeholder="0...." required />
                             </div>
 
                             <div class="form-group col-xs-6">
-                                <label>Giới tính:</label>
+                                <label>Gender:</label>
                                 <select required name="gioitinh">
 
-                                    <option value="female" selected>Nam</option>
-                                    <option value="other">Nữ</option>
+                                    <option value="female" selected>Male</option>
+                                    <option value="other">Female</option>
                                 </select>
                             </div>
                             <div class="form-group col-xs-6 col-left-padding">
-                                <label>Quốc tịch:</label>
+                                <label>National:</label>
                                 <select required name="quoctich">
                                     <option value="VN">Việt Nam</option>
-                                    <option value="K">Khác</option>
+                                    <option value="K">Other</option>
 
                                 </select>
                             </div>
                             <div class="textarea col-xs-12">
-                                <label>Lời nhắn:</label>
-                                <textarea name="mess" placeholder="Lời nhắn của bạn cho chúng tôi"></textarea>
+                                <label>Message:</label>
+                                <textarea name="mess" placeholder="Your message to us"></textarea>
                             </div>
 
                             <div class="col-xs-12">
                                 <div class="checkbox-outer">
-                                    <input type="radio" name="payment" value="checkinPayment" checked><label> Thanh toán khi CheckIn tại sân bay</label><br />
-                                    <input type="radio" value="credit" disabled><label class="text-secondary"> <strike>Thanh toán khi bằng ngân hàng</strike> (tạm thời chưa hỗ trợ)</label>
+                                    <input type="radio" name="payment" value="checkinPayment" checked><label> Pay when CheckIn at the airport</label><br />
+                                    <input type="radio" value="credit" disabled><label class="text-secondary"> <strike>Pay when by bank</strike> (Not Support Now)</label>
                                 </div>
                             </div>
 
@@ -115,7 +115,7 @@
 
                                 </div>
 
-                                <button class="btn-blue btn-red btn-style-1 " type="submit">Tiếp theo</button>
+                                <button class="btn-blue btn-red btn-style-1 " type="submit">Next</button>
                             </div>
                         </div>
 
