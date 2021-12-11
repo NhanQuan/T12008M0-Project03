@@ -57,9 +57,9 @@ namespace BanVeMayBay.Areas.Admin.Controllers
                 string filename = file.FileName.ToString();
                // string ExtensionFile = Mystring.GetFileExtension(filename);
                // string namefilenew = Mystring.ToSlug(ticket.departure_date.Year.ToString())+ "." + ExtensionFile;
-                var path = Path.Combine(Server.MapPath("~/Public/images/flight"), /*namefilenew*/filename);
+                var path = Path.Combine(Server.MapPath("~/Public/images/flight"), filename);
                 file.SaveAs(path);
-                ticket.airline = /*namefilenew*/filename;
+                ticket.airline = filename;
                 ticket.created_at = DateTime.Now;
                 ticket.updated_at = DateTime.Now;
                 ticket.created_by = int.Parse(Session["Admin_id"].ToString());
