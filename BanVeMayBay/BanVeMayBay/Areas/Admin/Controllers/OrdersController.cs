@@ -58,7 +58,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             morder.status = (morder.status == 1) ? 2 : 1;
             db.Entry(morder).State = EntityState.Modified;
             db.SaveChanges();
-            Message.set_flash("Thay đổi trang thái thành công", "success");
+            Message.set_flash("Status change successful", "success");
             return RedirectToAction("Index");
         }
         //trash
@@ -74,7 +74,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             morder.status = 0;
             db.Entry(morder).State = EntityState.Modified;
             db.SaveChanges();
-            Message.set_flash("Xóa thành công", "success");
+            Message.set_flash("Delete successfully", "success");
             return RedirectToAction("Index");
         }
         [CustomAuthorizeAttribute(RoleID = "ADMIN")]
@@ -84,7 +84,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             morder.status = 2;
             db.Entry(morder).State = EntityState.Modified;
             db.SaveChanges();
-            Message.set_flash("Khôi phục thành công", "success");
+            Message.set_flash("Successful recovery", "success");
             return RedirectToAction("trash");
         }
         [CustomAuthorizeAttribute(RoleID = "ADMIN")]
@@ -102,7 +102,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             }
             db.orders.Remove(morder);
             db.SaveChanges();
-            Message.set_flash("Đã xóa vĩnh viễn 1 Đơn hàng", "success");
+            Message.set_flash("Permanently deleted 1 Order", "success");
             return RedirectToAction("trash");
         }
     }

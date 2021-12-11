@@ -28,20 +28,20 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             var userC = db.users.Where(m => m.username == Username && m.access == 1);
             if (userC.Count() != 0)
             {
-                ViewBag.error = "Bạn không có quyền đăng nhập";
+                ViewBag.error = "You do not have permission to login";
             }
             else
             {
                 if (user_account.Count() == 0)
                 {
-                    ViewBag.error = "Tên Đăng Nhập Không Đúng";
+                    ViewBag.error = "Username Incorrect";
                 }
                 else
                 {
                     var pass_account = db.users.Where(m => m.access != 1 && m.status == 1 && m.password == Pass);
                     if (pass_account.Count() == 0)
                     {
-                        ViewBag.error = "Mật Khẩu Không Đúng";
+                        ViewBag.error = "Incorrect password";
                     }
                     else
                     {
@@ -101,7 +101,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
                 muser.updated_by = int.Parse(Session["Admin_id"].ToString());
                 db.Entry(muser).State = EntityState.Modified;
                 db.SaveChanges();
-                Message.set_flash("Cập nhật thành công", "success");
+                Message.set_flash("Update successful", "success");
                 return RedirectToAction("EditUser");
             }
             return View(muser);

@@ -63,10 +63,10 @@ namespace BanVeMayBay.Areas.Admin.Controllers
                 mtopic.updated_by = int.Parse(Session["Admin_id"].ToString());
                 db.Topics.Add(mtopic);
                 db.SaveChanges();
-                Message.set_flash("Thêm thành công", "success");
+                Message.set_flash("More success", "success");
                 return RedirectToAction("Index");
             }
-            Message.set_flash("Thêm thất bại", "danger");
+            Message.set_flash("More failure", "danger");
             ViewBag.listtopic = db.Topics.Where(m => m.status != 0).ToList();
             return View(mtopic);
         }
@@ -114,7 +114,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             mtopic.updated_by = int.Parse(Session["Admin_id"].ToString());
             db.Entry(mtopic).State = EntityState.Modified;
             db.SaveChanges();
-            Message.set_flash("Thay đổi trang thái thành công", "success");
+            Message.set_flash("Status change successful", "success");
             return RedirectToAction("Index");
         }
         //trash
@@ -131,7 +131,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             mtopic.updated_by = int.Parse(Session["Admin_id"].ToString());
             db.Entry(mtopic).State = EntityState.Modified;
             db.SaveChanges();
-            Message.set_flash("Xóa thành công", "success");
+            Message.set_flash("Delete successfully", "success");
             return RedirectToAction("Index");
         }
 
@@ -143,7 +143,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             mtopic.updated_by = int.Parse(Session["Admin_id"].ToString());
             db.Entry(mtopic).State = EntityState.Modified;
             db.SaveChanges();
-            Message.set_flash("Khôi phục thành Công", "success");
+            Message.set_flash("Restore Success", "success");
             return RedirectToAction("trash");
         }
         public ActionResult deleteTrash(int id)
@@ -151,7 +151,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             topic mtopic = db.Topics.Find(id);
             db.Topics.Remove(mtopic);
             db.SaveChanges();
-            Message.set_flash("Đã xóa vĩnh viễn 1 Chủ đề", "success");
+            Message.set_flash("1 Thread has been permanently deleted", "success");
             return RedirectToAction("trash");
         }
     }

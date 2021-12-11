@@ -79,11 +79,11 @@ namespace BanVeMayBay.Areas.Admin.Controllers
                 //create Link
              
                 db.SaveChanges();
-                Message.set_flash("Thêm thành công", "success");
+                Message.set_flash("More success", "success");
                 return RedirectToAction("Index");
             }
             ViewBag.listTopic = db.Topics.Where(m => m.status != 0).ToList();
-            Message.set_flash("Thêm Thất Bại", "danger");
+            Message.set_flash("More Failure", "danger");
             return View(mpost);
         }
 
@@ -133,12 +133,12 @@ namespace BanVeMayBay.Areas.Admin.Controllers
                 mpost.updated_by = int.Parse(Session["Admin_id"].ToString());
                 db.Entry(mpost).State = EntityState.Modified;
                 db.SaveChanges();
-                Message.set_flash("Sửa thành công", "success");
+                Message.set_flash("Successful fix", "success");
               
                 return RedirectToAction("Index");
             }
             ViewBag.listTopic = db.Topics.Where(m => m.status != 0).ToList();
-            Message.set_flash("Sửa Thất Bại", "danger");
+            Message.set_flash("Fix Failure", "danger");
             return View(mpost);
         }
 
@@ -163,7 +163,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             mpost.updated_by = int.Parse(Session["Admin_id"].ToString());
             db.Entry(mpost).State = EntityState.Modified;
             db.SaveChanges();
-            Message.set_flash("Thay đổi trang thái thành công", "success");
+            Message.set_flash("Status change successful", "success");
             return RedirectToAction("Index");
         }
         public ActionResult trash()
@@ -179,7 +179,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             mpost.updated_by = int.Parse(Session["Admin_id"].ToString());
             db.Entry(mpost).State = EntityState.Modified;
             db.SaveChanges();
-            Message.set_flash("Xóa thành công", "success");
+            Message.set_flash("Delete successfully", "success");
             return RedirectToAction("Index");
         }
         public ActionResult Retrash(int id)
@@ -190,7 +190,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             mpost.updated_by = int.Parse(Session["Admin_id"].ToString());
             db.Entry(mpost).State = EntityState.Modified;
             db.SaveChanges();
-            Message.set_flash("khôi phục thành công", "success");
+            Message.set_flash("successful recovery", "success");
             return RedirectToAction("trash");
         }
         public ActionResult deleteTrash(int id)
@@ -198,7 +198,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             post mpost = db.Posts.Find(id);         
             db.Posts.Remove(mpost);
             db.SaveChanges();
-            Message.set_flash("Đã xóa vĩnh viễn 1 Bài Vết", "success");
+            Message.set_flash("Permanently deleted 1 Trace", "success");
             return RedirectToAction("trash");
         }
     }

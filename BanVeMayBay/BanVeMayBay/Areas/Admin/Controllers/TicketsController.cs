@@ -67,11 +67,11 @@ namespace BanVeMayBay.Areas.Admin.Controllers
                 ticket.priceSale = ticket.price;
              
                 db.tickets.Add(ticket);
-                Message.set_flash("Thêm vé thành công", "success");
+                Message.set_flash("Successfully added ticket", "success");
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            Message.set_flash("Thêm vé thất bại", "danger");
+            Message.set_flash("More failed tickets", "danger");
             return View("Create");
         }
 
@@ -82,7 +82,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             tickets.status = (tickets.status == 1) ? 2 : 1;
             db.Entry(tickets).State = EntityState.Modified;
             db.SaveChanges();
-            Message.set_flash("Thay đổi trang thái thành công", "success");
+            Message.set_flash("Status change successful", "success");
             return RedirectToAction("Index");
         }
         //trash
@@ -98,7 +98,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             morder.status = 0;
             db.Entry(morder).State = EntityState.Modified;
             db.SaveChanges();
-            Message.set_flash("Xóa thành công", "success");
+            Message.set_flash("Delete successfully", "success");
             return RedirectToAction("Index");
         }
         [CustomAuthorizeAttribute(RoleID = "ADMIN")]
@@ -108,7 +108,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             morder.status = 2;
             db.Entry(morder).State = EntityState.Modified;
             db.SaveChanges();
-            Message.set_flash("Khôi phục thành công", "success");
+            Message.set_flash("Successful recovery", "success");
             return RedirectToAction("trash");
         }
         [CustomAuthorizeAttribute(RoleID = "ADMIN")]
@@ -117,7 +117,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             ticket morder = db.tickets.Find(id);
             db.tickets.Remove(morder);
             db.SaveChanges();
-            Message.set_flash("Đã xóa vĩnh viễn 1 Đơn hàng", "success");
+            Message.set_flash("Permanently deleted 1 Order", "success");
             return RedirectToAction("trash");
         }
 

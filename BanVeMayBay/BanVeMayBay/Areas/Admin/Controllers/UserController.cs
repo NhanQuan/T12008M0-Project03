@@ -53,8 +53,8 @@ namespace BanVeMayBay.Areas.Admin.Controllers
                 string password2 = data["password2"];
                 string username = muser.username;
                 var Luser = db.users.Where(m => m.status == 1 && m.username == username);
-                if (password1!=password2) {ViewBag.error = "PassWord không khớp";}
-                if (Luser.Count()>0) { ViewBag.error1 = "Tên Đăng nhâp đã tồn tại";}
+                if (password1!=password2) {ViewBag.error = "Password does not match"; }
+                if (Luser.Count()>0) { ViewBag.error1 = "Username already exists"; }
                 else
                 {
                     string pass = Mystring.ToMD5(password1);
@@ -67,7 +67,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
                     muser.updated_by = int.Parse(Session["Admin_id"].ToString());
                     db.users.Add(muser);
                     db.SaveChanges();
-                    Message.set_flash("Tạo user  thành công", "success");
+                    Message.set_flash("Create user successfully", "success");
                     return RedirectToAction("Index");
                 }
             }
@@ -101,7 +101,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
                     muser.updated_by = int.Parse(Session["Admin_id"].ToString());
                     db.Entry(muser).State = EntityState.Modified;
                     db.SaveChanges();
-                Message.set_flash("Cập nhật thành công", "success");
+                Message.set_flash("Update successful", "success");
                 return RedirectToAction("Index");
             }
             return View(muser);
@@ -116,7 +116,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             muser.updated_by = int.Parse(Session["Admin_id"].ToString());
             db.Entry(muser).State = EntityState.Modified;
             db.SaveChanges();
-            Message.set_flash("Thay đổi trang thái thành công", "success");
+            Message.set_flash("Status change successful", "success");
             return RedirectToAction("Index");
         }
         //trash
@@ -134,7 +134,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             muser.updated_by = int.Parse(Session["Admin_id"].ToString());
             db.Entry(muser).State = EntityState.Modified;
             db.SaveChanges();
-            Message.set_flash("Xóa thành công", "success");
+            Message.set_flash("Delete successfully", "success");
             return RedirectToAction("Index");
         }
 
@@ -146,7 +146,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             muser.updated_by = int.Parse(Session["Admin_id"].ToString());
             db.Entry(muser).State = EntityState.Modified;
             db.SaveChanges();
-            Message.set_flash("khôi phục thành công", "success");
+            Message.set_flash("Successful Recovery", "success");
             return RedirectToAction("trash");
         }
         public ActionResult deleteTrash(int id)
@@ -154,7 +154,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             user muser = db.users.Find(id);
             db.users.Remove(muser);
             db.SaveChanges();
-            Message.set_flash("Đã xóa vĩnh viễn 1 User", "success");
+            Message.set_flash("Permanently deleted 1 User", "success");
             return RedirectToAction("trash");
         }
 
