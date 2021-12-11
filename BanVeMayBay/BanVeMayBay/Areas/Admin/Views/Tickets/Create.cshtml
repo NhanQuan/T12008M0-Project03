@@ -230,9 +230,8 @@
                   
                     <div>
                         <label for="psw"><span class="text-secondary font-weight-bold">Số ghế</span></label>
-                        @Html.EditorFor(model => model.guestTotal, new { htmlAttributes = new { @class = "form-control" } })
+                        <input type="number" name="guestTotal" class="form-control" value="" required />
                         @Html.ValidationMessageFor(model => model.guestTotal, "", new { @class = "text-danger" })
-
                     </div>
 
                 </div>
