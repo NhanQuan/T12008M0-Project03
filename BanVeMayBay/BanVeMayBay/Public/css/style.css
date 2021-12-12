@@ -732,6 +732,9 @@ ul.nav-mini li i{color: #fff; padding-right: 5px;}
 }
 
 @media only screen and (max-width: 991px) {
+    /*.imgregister{
+        display: none;
+    }*/
     .logo-wrapper {
         width: 50%;
     }
