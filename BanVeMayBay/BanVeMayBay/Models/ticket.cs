@@ -26,9 +26,11 @@ namespace BanVeMayBay.Models
         public string departure_address { get; set; }
         public string arrival_address { get; set; }
         public DateTime departure_date { get; set; }
-        [Required(ErrorMessage = "Seats is not blank"), Range(50, int.MaxValue, ErrorMessage = "Please enter a value bigger than {50}")]
-        public int? guestTotal { get; set; }
-        [Required(ErrorMessage = "Price is not blank"), Range(1, int.MaxValue, ErrorMessage = "Please enter a value bigger than {1}")]
+        [Range(50, 300, ErrorMessage = "Please enter 50 <= value <= 300 ")]
+        [DataType(DataType.Currency)]
+        public int guestTotal { get; set; }
+        [Range(10,3000, ErrorMessage = "Please enter 10$ <= value <= 3000$")]
+        [DataType(DataType.Currency)]
         public double price { get; set; }
         public double priceSale { get; set; }
         public int sold { get; set; }
