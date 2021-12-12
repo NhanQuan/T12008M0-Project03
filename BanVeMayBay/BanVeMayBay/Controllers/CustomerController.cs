@@ -24,14 +24,14 @@ namespace BanVeMayBay.Controllers
             var pass = user_account.FirstOrDefault()?.password;
                 if (user_account.Count() == 0)
                 {
-                    ViewBag.error = "Tên Đăng Nhập Không Đúng";
+                    ViewBag.error = "Username Incorrect";
                 }
                 else
                 {
                     var pass_account = user_account.Where(m => m.access == 1 && m.status == 1 && m.password == Pass).FirstOrDefault();
                     if (pass_account == null)
                     {
-                        ViewBag.error = "Mật Khẩu Không Đúng";
+                        ViewBag.error = "Incorrect password";
                     }
                     else
                     {
@@ -40,7 +40,7 @@ namespace BanVeMayBay.Controllers
                     Session["userName11"] = user.fullname;
                     Session["id"] = user.ID;
                     if (!Response.IsRequestBeingRedirected)
-                        Message.set_flash("Đăng nhập thành công ", "success");
+                        Message.set_flash("Logged in successfully", "success");
                     return Redirect("~/tai-khoan");
                 }
                 }
@@ -54,7 +54,7 @@ namespace BanVeMayBay.Controllers
             Session["userName11"] = "";
             Session[Common.CommonConstants.CUSTOMER_SESSION]="";
             Response.Redirect("~/dang-nhap");
-            Message.set_flash("Đăng xuất thành công", "success");
+            Message.set_flash("Sign out successful", "success");
         }
         public ActionResult register()
         {
@@ -69,7 +69,7 @@ namespace BanVeMayBay.Controllers
             string Pass2 = Mystring.ToMD5(fc["repsw"]);
             if (Pass2 != Pass)
             {
-                ViewBag.error = "Mật khẩu không khớp";
+                ViewBag.error = "password incorrect";
                 return View("loginEndRegister");
             }
             string email = fc["email"];
@@ -80,7 +80,7 @@ namespace BanVeMayBay.Controllers
                 var Luser = db.users.Where(m => m.status == 1 && m.username == uname && m.access == 1);
                 if (Luser.Count() > 0)
                 {
-                    ViewBag.error = "Tên Đăng Nhập đã tồn tại";
+                    ViewBag.error = "Username available";
                     return View("loginEndRegister");
                 }
                 else
@@ -101,12 +101,12 @@ namespace BanVeMayBay.Controllers
                     muser.status = 1;
                     db.users.Add(muser);
                     db.SaveChanges();
-                    Message.set_flash("Đăng ký tài khoản thành công, Đăng nhập ở đây ", "success");
+                    Message.set_flash("Successful account registration, Login here ", "success");
                     return Redirect("~/dang-nhap");
                 }
 
             }
-            Message.set_flash("Đăng ký tài khoản thất bai", "danger");
+            Message.set_flash("Account registration failed", "danger");
             return View("register");
         }
 
@@ -125,17 +125,17 @@ namespace BanVeMayBay.Controllers
             {
                 if (pswO.ToMD5() != user.password)
                 {
-                    ViewBag.success = "Mật khẩu cũ không đúng.";
+                    ViewBag.success = "Old password is incorrect.";
                     return View("Myaccount", user);
                 }
                 if (pswN == null || pswR == null || pswN.Length < 6 || pswR.Length < 6)
                 {
-                    ViewBag.success = "Mật khẩu mới không hợp lệ.";
+                    ViewBag.success = "The new password is not valid.";
                     return View("Myaccount", user);
                 }    
                 if (pswN.ToMD5() != pswR.ToMD5())
                 {
-                    ViewBag.success = "Mật khẩu không khớp.";
+                    ViewBag.success = "Password incorrect.";
                     return View("Myaccount", user);
                 }
                 else
@@ -152,7 +152,7 @@ namespace BanVeMayBay.Controllers
             user.updated_by = 1;
             db.Entry(user).State = EntityState.Modified;
             db.SaveChanges();
-            ViewBag.success = "Cập nhật thành công.";
+            ViewBag.success = "Update successful.";
             return View("Myaccount", user);
         }
         public ActionResult ListOderCus()
@@ -180,7 +180,7 @@ namespace BanVeMayBay.Controllers
             }
             db.orders.Remove(morder);
             db.SaveChanges();
-            Message.set_flash("Đã hủy 1 đơn hàng", "success");
+            Message.set_flash("Canceled 1 order", "success");
             return Redirect("~/tai-khoan");
         }
     }
