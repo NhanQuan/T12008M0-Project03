@@ -20,11 +20,11 @@
 
         <td>
             <h6><strong class="color-red-3">@item.price.ToString("N0") $</strong></h6>
-            <p class="emi">(Currency - VND)</p>
+            <p class="emi">(Currency - $)</p>
         </td>
         <td>
             @Html.RadioButton("datveKH", item.id, new { name = "idTitket", required = "required" })
-            @Html.Label("Đặt vé")
+            @Html.Label("Book")
         </td>
     </tr>
 }
