@@ -24,39 +24,39 @@
                 <table class="table" style="margin-top:20px;">
                     <tbody>
                         <tr>
-                            <td class="title">Hãng hàng không</td>
+                            <td class="title">Airline</td>
                             <td> <img src="~/public/images/flight/@Model.airline" alt=""></td>
                         </tr>
                         <tr>
-                            <td class="title">Giá vé</td>
-                            <td class="b-id text-danger">@Model.price.ToString("N0") VND</td>
+                            <td class="title">Price</td>
+                            <td class="b-id text-danger">@Model.price.ToString("N0") $</td>
                         </tr>
                         <tr>
-                            <td class="title">Ngày bay</td>
+                            <td class="title">Start Date</td>
                             <td>@Model.departure_date.ToString("dd-MM-yyyy")</td>
                         </tr>
                         <tr>
-                            <td class="title">Giờ bay</td>
+                            <td class="title">Departure Time</td>
                             <td>@Model.departure_time</td>
                         </tr>
                         <tr>
-                            <td class="title">Giờ đến</td>
+                            <td class="title">Arrive Time</td>
                             <td>@Model.arrival_time</td>
                         </tr>
                         <tr>
-                            <td class="title">Nơi bay</td>
+                            <td class="title">From</td>
                             <td>@Model.departure_address</td>
                         </tr>
                         <tr>
-                            <td class="title">Nơi đến</td>
+                            <td class="title">To</td>
                             <td>@Model.arrival_address</td>
                         </tr>
                         <tr>
-                            <td class="title">Sân bay</td>
+                            <td class="title">Airport</td>
                             <td>@Model.airport</td>
                         </tr>
                         <tr>
-                            <td class="title">Ghế trống</td>
+                            <td class="title">Empty seat</td>
                             <td>@Model.guestTotal Ghế</td>
                         </tr>
 
