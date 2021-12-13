@@ -21,8 +21,6 @@ namespace BanVeMayBay.Controllers
         public ActionResult flightSearch(FormCollection fc, int? page)
         {
             string typeTicket = fc["typeticket"];
-
-
             if (page == null) page = 1;
             int pageSize = 4;
             int pageNumber = (page ?? 1);
@@ -38,7 +36,7 @@ namespace BanVeMayBay.Controllers
 
             ViewBag.url = "chuyen-bay";
             //convert sang mm/dd/yy cho may hieu 
-            DateTime ngaybay1 = DateTime.ParseExact(ngaybay, "d/M/yyyy", CultureInfo.InvariantCulture);
+            DateTime ngaybay1 = DateTime.ParseExact(ngaybay, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 //sang mm/dd/yy
             string ngaybay2 = ngaybay1.ToString("MM-dd-yyyy");
             DateTime ngaybay3 = DateTime.Parse(ngaybay2);

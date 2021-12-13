@@ -101,7 +101,8 @@
                         </div>
                         <div>
                             <label for="psw"><span class=" ">Status</span></label>
-                            @Html.DropDownListFor(model => model.status, status, new { @class = "form-control" })
+                            @*@Html.DropDownListFor(model => model.status, status, new { @class = "form-control" })*@
+                            <input type="number" name="status" class="form-control" value="@Model.status" readonly />
                             @Html.ValidationMessageFor(model => model.status, "", new { @class = "text-danger" })
                         </div>
                         <div>
