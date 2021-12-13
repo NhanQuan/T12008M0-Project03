@@ -137,7 +137,7 @@ namespace BanVeMayBay.Controllers
         }
         public ActionResult lienHe()
         {
-            var single = db.Posts.Where(m => m.status == 1 && m.slug == "lien-he").First();
+            var single = db.Posts.Where(m => m.status == 1 && m.slug == "contact-us").First();
             return View("PostDetal", single);
         }
 
