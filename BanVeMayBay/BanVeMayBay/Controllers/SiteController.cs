@@ -33,14 +33,12 @@ namespace BanVeMayBay.Controllers
             string noiBay = fc["departure_address"];
             string noiVe = fc["arrival_address"];
             string ngaybay = fc["departure_date"];
-
             ViewBag.url = "chuyen-bay";
             //convert sang mm/dd/yy cho may hieu 
             DateTime ngaybay1 = DateTime.ParseExact(ngaybay, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 //sang mm/dd/yy
             string ngaybay2 = ngaybay1.ToString("MM-dd-yyyy");
             DateTime ngaybay3 = DateTime.Parse(ngaybay2);
-
             ViewBag.noiBay = noiBay;
             ViewBag.noiVe = noiVe;
             ViewBag.ngaybay = ngaybay;

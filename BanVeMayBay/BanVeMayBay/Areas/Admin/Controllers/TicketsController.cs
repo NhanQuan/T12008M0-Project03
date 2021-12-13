@@ -47,7 +47,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ticket ticket)
         {
-            ticket.flightCode = "NB_"+ticket.departure_date;
+            //ticket.flightCode = "NB_"+ticket.departure_date;
             ticket.img = "img";
             ticket.sold = 0;
             if (ModelState.IsValid)
