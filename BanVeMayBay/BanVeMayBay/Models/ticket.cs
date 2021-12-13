@@ -16,6 +16,7 @@ namespace BanVeMayBay.Models
         public string name { get; set; }
         [Required(ErrorMessage = "Description is not blank")]
         public string description { get; set; }
+        [Required(ErrorMessage = "FlightCode is not blank")]
         public string flightCode { get; set; }
         
         public string airline { get; set; }
@@ -29,7 +30,7 @@ namespace BanVeMayBay.Models
         [Range(50, 300, ErrorMessage = "Please enter 50 <= value <= 300 ")]
         [DataType(DataType.Currency)]
         public int guestTotal { get; set; }
-        [Range(10,3000, ErrorMessage = "Please enter 10$ <= value <= 3000$")]
+        [Range(30,3000, ErrorMessage = "Please enter 30$ <= value <= 3000$")]
         [DataType(DataType.Currency)]
         public double price { get; set; }
         public double priceSale { get; set; }
