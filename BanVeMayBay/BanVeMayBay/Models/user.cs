@@ -11,9 +11,9 @@ namespace BanVeMayBay.Models
     {
         [Key]
         public int ID { get; set; }
-
+        [Required(ErrorMessage = "Fullname is not blank")]
         public string fullname { get; set; }
-
+        [Required(ErrorMessage = "UserName is not blank")]
         public string username { get; set; }
 
         public string password { get; set; }
@@ -23,7 +23,8 @@ namespace BanVeMayBay.Models
         public string gender { get; set; }
 
         public string address { get; set; }
-
+        [Phone(ErrorMessage = "Please enter TelephoneNumber")]
+       
         public string phone { get; set; }
 
         public string img { get; set; }

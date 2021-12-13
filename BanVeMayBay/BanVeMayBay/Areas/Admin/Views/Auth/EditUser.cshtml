@@ -1,4 +1,5 @@
 ﻿@model BanVeMayBay.Models.user
+
 @{
     ViewBag.Title = "Cập nhật";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
@@ -82,8 +83,10 @@
                     </div>
                     <div>
                         <label for="psw"><span class=" ">Phone</span></label>
-                        @Html.EditorFor(model => model.phone, new { htmlAttributes = new { type = "number", @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
+                        @*@Html.EditorFor(model => model.phone, new { htmlAttributes = new { type = "number", @class = "form-control" } })*@
+                        <input type="tel" name="phone" class="form-control" value="@Model.phone" />
+                        @*@Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })*@
+                        <span asp-validation-for="phone"></span>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -100,7 +103,11 @@
                     </div>
                     <div>
                         <label for="psw"><span class="text-secondary ">Delegation of Powers</span></label>
-                        @Html.DropDownListFor(model => model.access, listRole, new { @class = "form-control" })
+                        <input type="text" name="status" class="form-control" value="@if (Model.access == 0) {
+                        @Model.access.ToString("Admin")
+
+                        } else {@Model.access.ToString("SalesMan") } " readonly />
+                        @*@Html.DropDownListFor(model => model.access, listRole, new { @class = "form-control" })*@
                         @Html.ValidationMessageFor(model => model.access, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -111,5 +118,5 @@
     </div>
 </section>
 <script>
-        $("#user").addClass("active");
+    $("#user").addClass("active");
 </script>

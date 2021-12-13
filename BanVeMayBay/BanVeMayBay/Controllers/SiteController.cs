@@ -21,9 +21,12 @@ namespace BanVeMayBay.Controllers
         public ActionResult flightSearch(FormCollection fc, int? page)
         {
             string typeTicket = fc["typeticket"];
-            if (page == null) page = 1;
+            if (page == null) 
+            { 
+                page = 1; 
+            }
             int pageSize = 4;
-            int pageNumber = (page ?? 1);
+          
             int songuoi1 = int.Parse(fc["songuoi1"]);
             int songuoi2 = int.Parse(fc["songuoi2"]);
             int songuoi3 = int.Parse(fc["songuoi3"]);
@@ -54,8 +57,8 @@ namespace BanVeMayBay.Controllers
                 ViewBag.date = ngayden3;
                 var list = db.tickets.Where(m => m.departure_address.Contains(noiBay) && m.arrival_address.Contains(noiVe)).
              Where(m => m.departure_date == ngaybay3).Where(m=>m.status==1).ToList();
-               
-                    return View("flightSearchReturn", list.ToPagedList(pageNumber, pageSize));
+                int pageNumber = (page ?? 1);
+                return View("flightSearchReturn", list.ToPagedList(pageNumber, pageSize));
                     
                 
             }
@@ -65,6 +68,7 @@ namespace BanVeMayBay.Controllers
                 //ve 1 chieu
                 var list = db.tickets.Where(m => m.departure_address.Contains(noiBay) && m.arrival_address.Contains(noiVe)).
              Where(m => m.departure_date == ngaybay3).Where(m=>m.status==1).ToList();
+                int pageNumber = (page ?? 1);
                 return View("flightSearchOnway", list.ToPagedList(pageNumber, pageSize));
             
             }

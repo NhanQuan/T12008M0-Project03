@@ -152,6 +152,11 @@ namespace BanVeMayBay.Areas.Admin.Controllers
         public ActionResult deleteTrash(int id)
         {
             user muser = db.users.Find(id);
+            if(muser.ID == int.Parse(Session["Admin_id"].ToString()))
+            {
+                Message.set_flash("Not Delete Admin", "danger");
+                return RedirectToAction("trash");
+            }
             db.users.Remove(muser);
             db.SaveChanges();
             Message.set_flash("Permanently deleted 1 User", "success");
