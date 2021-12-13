@@ -213,6 +213,11 @@
 
                     </div>
                     <div>
+                        <label for="psw"><span class="text-secondary font-weight-bold">Flight Code</span></label>
+                        @Html.EditorFor(model => model.flightCode, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.flightCode, "", new { @class = "text-danger" })
+                    </div>
+                    <div>
                         <label for="psw"><span class="text-secondary font-weight-bold">Airport</span></label>
                         @Html.EditorFor(model => model.airport, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.airport, "", new { @class = "text-danger" })
@@ -227,7 +232,7 @@
 
                     </div>
 
-                  
+
                     <div>
                         <label for="psw"><span class="text-secondary font-weight-bold">Amount Seats</span></label>
                         <input type="number" name="guestTotal" class="form-control" value="" placeholder="Amount Seats > 50" required />
@@ -261,7 +266,7 @@
                     </div>
                     <div>
                         <label for="psw"><span class="text-secondary font-weight-bold">Price</span></label>
-                        <input type="number" name="price" class="form-control" placeholder="10$ <= Price <= 3000$" value="" required />
+                        <input type="number" name="price" class="form-control" placeholder="30$ <= Price <= 3000$" value="" required />
                         @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger" })
                     </div>
                     <div>
