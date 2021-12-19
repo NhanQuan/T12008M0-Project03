@@ -8,11 +8,11 @@
 
 <div class="card card-title bg-white p-1">
     <div class="row">
-        <div class="col-md-6 "> <h5 class="pl-2 mt-2 text-blues">Manage Tickets </h5> </div>
+        <div class="col-md-6 "> <h5 class="pl-2 mt-2 text-blues">Add Airport </h5> </div>
         <div class="col-md-6 m-0">
             <ol class="breadcrumb bg-white float-sm-right m-0">
                 <li class="breadcrumb-item"><a href="/Admin">Home</a></li>
-                <li class="breadcrumb-item active">Manage Tickets</li>
+                <li class="breadcrumb-item active">Add Airport</li>
             </ol>
         </div>
     </div>
@@ -20,7 +20,7 @@
 
 <section class="container pt-2 card">
     @Html.Partial("_MessgeAlert")
-    <div class="container bg-white pt-4 ">
+    <div class="container bg-white pt-4 "  style="margin-bottom:50px">
 
         @using (Html.BeginForm("CreateCities", "Airport", FormMethod.Post ))
         {
@@ -41,7 +41,7 @@
 
 
                     <div>
-                        <label for="psw"><span class="text-secondary font-weight-bold">From</span></label>
+                        <label for="psw"><span class="text-secondary font-weight-bold">Country</span></label>
                         <select name="countryId" class="selectpicker form-control" tabindex="1">
 
                             @foreach (var item in ViewBag.countries)
