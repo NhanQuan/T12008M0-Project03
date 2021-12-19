@@ -4,9 +4,9 @@
     Layout = "~/Views/Shared/_layOutSite.cshtml";
 }
 <section class="booking">
-    <div class="container bg-white">
+    <div class="container bg-white" style="margin-bottom:50px">
         <div class="row">
-                <div class="booking-confirmed booking-outer" style="margin-top: 90px;">
+                <div class="booking-confirmed booking-outer" @*style="margin-top: 90px;*@">
             <div class="col-md-8" >
                     <div class="confirmation-title">
                         <div class="form-title form-title-1">
@@ -74,15 +74,17 @@
 
                 </div>
             </div>
-            <div class="col-md-4" style="margin-top: 210px;">
-                @Html.Action("_BookingConnfig", "Checkout", new { orderId = Model.ID })
-                <h3> Total: @Model.total.ToString("N0") $</h3>
-            </div>
-            <div class="billing-back-btn">
-                <div class="billing-btn">
-                    <a class="btn-blue btn-red btn-style-1 " href="~/Customer/canelOrder?OrderId=@Model.ID">Cancel Booking</a>
+                <div class="col-md-4" style="margin-top: 90px;left:60px">
+                    @Html.Action("_BookingConnfig", "Checkout", new { orderId = Model.ID })
+                    <h3> Total: @Model.total.ToString("N0") $</h3>
+
+                    <div class="billing-back-btn">
+                        <div class="billing-btn">
+                            <a class="btn-blue btn-red btn-style-1 " href="~/Customer/canelOrder?OrderId=@Model.ID">Cancel Booking</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            
         </div>
     </div>
 </section>
