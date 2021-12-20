@@ -32,15 +32,29 @@
                                             </tr>
                                             <tr>
                                                 <td class="title">Departure Date</td>
-                                                <td>@item.departure_date</td>
+                                                <td>@item.departure_date.Value.ToString("dd/MM/yyyy")</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="title">Start Time </td>
+                                                <td>
+                                                    <h6>@item.departure_time</h6>
+                                                </td>
+                                               
+                                            </tr>
+                                            <tr>
+                                                <td class="title">Arrive Time</td>
+                                                <td>
+                                                    <h6>@item.arrival_time</h6>
+
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td class="title">From</td>
-                                                <td>@item.fromAirport</td>
+                                                <td>@item.city.cityName</td>
                                             </tr>
                                             <tr>
                                                 <td class="title">To</td>
-                                                <td>@item.toAirport</td>
+                                                <td>@item.city1.cityName</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -121,7 +135,7 @@
                                 </div>
                             </div>
                         </div>
-
+                             </div>
                     </form>
 
 
