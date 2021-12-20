@@ -44,18 +44,18 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.fromAirport)
+            @Html.DisplayNameFor(model => model.city.cityName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.fromAirport)
+            @Html.DisplayFor(model => model.city.cityName)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.toAirport)
+            @Html.DisplayNameFor(model => model.city1.cityName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.toAirport)
+            @Html.DisplayFor(model => model.city1.cityName)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.ticketType)
@@ -65,15 +65,9 @@
             @Html.DisplayFor(model => model.ticketType)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.img)
-        </dt>
+      
 
-        <dd>
-            @Html.DisplayFor(model => model.img)
-        </dd>
 
-     
 
         <dt>
             @Html.DisplayNameFor(model => model.departure_date)
@@ -83,6 +77,11 @@
             @Html.DisplayFor(model => model.departure_date)
         </dd>
 
+        <dt>@Html.DisplayNameFor(model => model.departure_time)</dt>
+        <dd>@Html.DisplayFor(model => model.departure_time)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.arrival_time)</dt>
+        <dt>@Html.DisplayFor(model => model.arrival_time)</dt>
         <dt>
             @Html.DisplayNameFor(model => model.guestTotal)
         </dt>
@@ -107,45 +106,7 @@
             @Html.DisplayFor(model => model.priceSale)
         </dd>
 
-        @*<dt>
-            @Html.DisplayNameFor(model => model.promote)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.promote)
-        </dd>*@
-
-        <dt>
-            @Html.DisplayNameFor(model => model.created_at)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.created_at)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.created_by)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.created_by)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.updated_at)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.updated_at)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.updated_by)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.updated_by)
-        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.status)

@@ -20,6 +20,7 @@ namespace BanVeMayBay.Controllers
         [HttpPost]        
         public ActionResult flightSearch(FormCollection fc, int? page)
         {
+            
             string typeTicket = fc["typeticket"];
             if (page == null) 
             { 
@@ -55,6 +56,12 @@ namespace BanVeMayBay.Controllers
                 DateTime ngayden3 = DateTime.Parse(ngayden2);
                 ViewBag.ngayden = ngayve;
                 ViewBag.date = ngayden3;
+
+                if (ngaybay1 > ngayden1)
+                {
+                    Message.set_flash("DepartureDate < ArriveDate", "danger");
+                    return Redirect("~/Home/Index");
+                }
                 var list = db.tickets.Where(m => m.city.cityName.Contains(noiBay) && m.city1.cityName.Contains(noiVe)).
              Where(m => m.departure_date == ngaybay3).Where(m => m.status == 1).ToList();
                 int pageNumber = (page ?? 1);

@@ -129,6 +129,11 @@ namespace BanVeMayBay.Areas.Admin.Controllers
         public ActionResult Deltrash(int id)
         {
             user muser = db.users.Find(id);
+            if (muser.ID == int.Parse(Session["Admin_id"].ToString()))
+            {
+                Message.set_flash("Not Delete Admin", "danger");
+                return RedirectToAction("Index");
+            }
             muser.status = 0;
             muser.updated_at = DateTime.Now;
             muser.updated_by = int.Parse(Session["Admin_id"].ToString());

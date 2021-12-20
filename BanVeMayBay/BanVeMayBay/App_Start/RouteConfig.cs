@@ -67,6 +67,7 @@ namespace BanVeMayBay
                 url: "all-chuyen-bay",
                 defaults: new { controller = "Site", action = "AllChuyenBay", id = UrlParameter.Optional }
             );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
