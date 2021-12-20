@@ -51,18 +51,18 @@ namespace BanVeMayBay.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(country countries)
         {           
-            if(db.countries.Where(m=>m.countryName.Contains(countries.countryName)) == null)
-                {
+            //if(db.countries.Where(m=>m.countryName.Contains(countries.countryName)) == null)
+            //    {
                     db.countries.Add(countries);
                     Message.set_flash("Successfully added Country", "success");
                     db.SaveChanges();
                     return RedirectToAction("Index");
-                }
-                else
-                {
-                    Message.set_flash("Country already exist", "danger");
-                    return View("Create");
-                }
+                //}
+                //else
+                //{
+                //    Message.set_flash("Country already exist", "danger");
+                //    return View("Create");
+                //}
 
             
         }
