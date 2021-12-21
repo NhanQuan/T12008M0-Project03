@@ -32,8 +32,10 @@
                                     <th>Departure Date</th>
                                     <th>Start Time</th>
                                     <th>Arrive Time</th>
-                                    <th>Detail</th>
+                                    <th>Class</th>
                                     <th>Price</th>
+                                    <th>Detail</th>
+
                                     <th>#</th>
                                 </tr>
                             </thead>
@@ -63,13 +65,15 @@
                                         <h6>@item.arrival_time</h6>
 
                                     </td>
-                                    <td>
-                                        <a href="~/chuyen-bay/@item.id">Detail</a>
-                                    </td>
+                                    <td>@item.ticketType</td>
                                     <td>
                                         <h6><strong class="color-red-3">@item.price.Value.ToString("N0") $</strong></h6>
                                         <p class="emi">(Currency - $)</p>
                                     </td>
+                                    <td>
+                                        <a href="~/chuyen-bay/@item.id">Detail</a>
+                                    </td>
+
                                     <td>
 
                                         @Html.RadioButton("datve", item.id, new { name = "idTitket", required = "required" })

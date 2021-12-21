@@ -24,9 +24,11 @@
                                 <th>Airline</th>
                                 <th>From</th>
                                 <th>To</th>
-                                <th>Detail</th>                         
                                 <th>Price</th>
-                               
+                                <th>Class</th>
+                                <th>Detail</th>
+
+
                             </tr>
                         </thead>
                         <tbody>
@@ -45,13 +47,19 @@
                                     <P>Airport (@item.city1.cityName)</P>
                                 </td>
                                 <td>
-                                    <a href="~/chuyen-bay/@item.id">Detail</a>
+                                    <h6>
+                                        @item.ticketType
+                                    </h6>
                                 </td>
-
                                 <td>
                                     <h6><strong class="color-red-3">@item.price.Value.ToString("N0") $</strong></h6>
                                     <p class="emi">(Currency - $)</p>
                                 </td>
+                                <td>
+                                    <a href="~/chuyen-bay/@item.id">Detail</a>
+                                </td>
+
+
 
                             </tr>
                             }
