@@ -60,11 +60,21 @@ namespace BanVeMayBay.Controllers
             {
                 iddd = sessionUser.ID;
                 var list = new List<ticket>();
-                int id = int.Parse(fc["datve"]);
-                var list1 = db.tickets.Find(id);
-                ViewBag.songuoi = int.Parse(fc["songuoi"]);
+                
+                if(fc["datve"] != null)
+                {
+                    int id = int.Parse(fc["datve"]);
+                    var list1 = db.tickets.Find(id);
+                    ViewBag.songuoi = int.Parse(fc["songuoi"]);
 
-                list.Add(list1);
+                    list.Add(list1);
+                    ViewBag.ve1 = id;
+                }
+                else
+                {
+                    return Redirect("~/Home/index");
+                }
+              
                 // neu co ve khu hoi
                 if (!string.IsNullOrEmpty(fc["datveKH"]))
                 {
@@ -73,7 +83,7 @@ namespace BanVeMayBay.Controllers
                     ViewBag.ve2 = id2;
                     list.Add(list2);
                 }
-                ViewBag.ve1 = id;
+                
 
                 return View("", list.ToList());
             }

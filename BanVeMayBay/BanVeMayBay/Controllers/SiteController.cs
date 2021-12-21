@@ -37,6 +37,7 @@ namespace BanVeMayBay.Controllers
             string noiBay = fc["departure_address"];
             string noiVe = fc["arrival_address"];
             string ngaybay = fc["departure_date"];
+           
             ViewBag.url = "chuyen-bay";
             //convert sang mm/dd/yy cho may hieu 
             DateTime ngaybay1 = DateTime.ParseExact(ngaybay, "dd/MM/yyyy", CultureInfo.InvariantCulture);
@@ -82,11 +83,11 @@ namespace BanVeMayBay.Controllers
 
         }
         
-        public ActionResult return_ticket(string date,string noibay, string noiden)
+        public ActionResult return_ticket(DateTime date,string noibay, string noiden)
         {
-            DateTime ngaybay3 = DateTime.Parse(date);
-            var list = db.tickets.Where(m => m.city.cityName.Contains(noibay) && m.city1.cityName.Contains(noiden)).
-               Where(m => m.departure_date == ngaybay3).Where(m => m.status == 1).ToList();
+           
+            var list = db.tickets.Where(m => m.city.cityName.Contains(noiden) && m.city1.cityName.Contains(noibay)).
+               Where(m => m.departure_date == date).Where(m => m.status == 1).ToList();
             return View("_returnTicket", list);
         }
         public ActionResult AllChuyenBay(int? page)
