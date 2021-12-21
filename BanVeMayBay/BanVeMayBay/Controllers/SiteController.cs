@@ -59,7 +59,7 @@ namespace BanVeMayBay.Controllers
 
                 if (ngaybay1 > ngayden1)
                 {
-                    Message.set_flash("DepartureDate < ArriveDate", "danger");
+                    Message.set_flash("Return date must be greater than or equal to departure date!", "danger");
                     return Redirect("~/Home/Index");
                 }
                 var list = db.tickets.Where(m => m.city.cityName.Contains(noiBay) && m.city1.cityName.Contains(noiVe)).
