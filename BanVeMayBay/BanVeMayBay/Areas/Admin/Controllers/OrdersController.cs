@@ -45,9 +45,8 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             foreach (var item in list)
             {
                 ticket ticket = db.tickets.Find(item.ticketId);
-                list1.Add(ticket);
+                list1.Add(ticket);              
             }
-
             return View("_BookingConnfig", list1.ToList());
         }
 
