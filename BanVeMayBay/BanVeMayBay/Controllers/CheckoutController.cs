@@ -123,7 +123,7 @@ namespace BanVeMayBay.Controllers
             var ticket = db.tickets.Find(id1);
             ticket.Sold = ticket.Sold + order.guestTotal;
             db.Entry(ticket).State = EntityState.Modified;
-
+            db.SaveChanges();
             //neu ton tai ve 2 chieu
             if (!string.IsNullOrEmpty(fc["veReturn"]))
             {

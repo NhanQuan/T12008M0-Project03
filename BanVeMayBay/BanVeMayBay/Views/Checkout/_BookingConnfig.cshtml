@@ -10,7 +10,7 @@
                 <td class="b-id text-danger">@item.price.Value.ToString("N0") $</td>
             </tr>
             <tr>
-                <td class="title">Departure Date</td>
+                <td class="title">Start Date</td>
                 <td>@item.departure_date</td>
             </tr>
             <tr>
@@ -20,6 +20,14 @@
             <tr>
                 <td class="title">To</td>
                 <td>@item.city1.cityName</td>
+            </tr>
+            <tr>
+                <td class="title">DepartureTime</td>
+                <td>@item.departure_time</td>
+            </tr>
+            <tr>
+                <td class="ArriveTime">To</td>
+                <td>@item.arrival_time</td>
             </tr>
         </tbody>
     </table>   
