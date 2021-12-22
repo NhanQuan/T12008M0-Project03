@@ -93,9 +93,11 @@
                         </select>
 
                     </div>
+
+
                     <div>
                         <label for="psw"><span class="text-secondary font-weight-bold">Amount Seats</span></label>
-                        <input type="number" name="guestTotal" class="form-control" min="50" max="300"value="" placeholder="Amount Seats > 50" required />
+                        <input type="number" name="guestTotal" class="form-control" value="" placeholder="Amount Seats > 50" required min="50" />
                         <span asp-validation-for="guestTotal" class="text-danger"></span>
                     </div>
 
@@ -126,7 +128,7 @@
                     </div>
                     <div>
                         <label for="psw"><span class="text-secondary font-weight-bold">Price</span></label>
-                        <input type="number" name="price" class="form-control" placeholder="30$ <= Price <= 3000$" value="" required />
+                        <input type="number" name="price" class="form-control" placeholder="30$ <= Price <= 3000$" value="" required min="30" max="3000" />
                         <span asp-validation-for="price" class="text-danger"></span>
                     </div>
                         <div>
@@ -137,9 +139,7 @@
                             </select>
                         </div>
                     </div>
-
-                </div>
-           
+                </div>           
         }
     </div>
 </section>
