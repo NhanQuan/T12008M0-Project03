@@ -93,11 +93,9 @@
                         </select>
 
                     </div>
-
-
                     <div>
                         <label for="psw"><span class="text-secondary font-weight-bold">Amount Seats</span></label>
-                        <input type="number" name="guestTotal" class="form-control" value="" placeholder="Amount Seats > 50" required />
+                        <input type="number" name="guestTotal" class="form-control" min="50" max="300"value="" placeholder="Amount Seats > 50" required />
                         <span asp-validation-for="guestTotal" class="text-danger"></span>
                     </div>
 
