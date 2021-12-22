@@ -110,7 +110,7 @@ namespace BanVeMayBay.Controllers
             ViewBag.nameTopic = slug;
             ViewBag.url = "tin-tuc/" + slug + "";
             int pageNumber = (page ?? 1);
-            var listPost = db.posts.Where(m => m.status == 1 && m.topid == singleC.ID).Where(m => m.status == 1).ToList();
+            var listPost = db.posts.Where(m => m.status == 1 && m.topid == singleC.ID).OrderByDescending(m => m.ID).ToList();
             return View("postOftoPic", listPost.ToPagedList(pageNumber, pageSize));
         }
         public ActionResult topic()
