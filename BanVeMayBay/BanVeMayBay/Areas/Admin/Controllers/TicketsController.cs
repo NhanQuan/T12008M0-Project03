@@ -127,6 +127,59 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             Message.set_flash("Permanently deleted 1 Order", "success");
             return RedirectToAction("trash");
         }
+        // GET: Admin/Topic/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            var cities = db.cities.ToList();
+            ViewBag.cities = cities;
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ticket mticket = db.tickets.Find(id);
+            if (mticket == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.listticket = db.tickets.Where(m => m.status == 1).ToList();
+            return View(mticket);
+          
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(ticket mticket)
+        {
+            var cities = db.cities.ToList();
+            ViewBag.cities = cities;
+            if (ModelState.IsValid)
+            {
+                HttpPostedFileBase file;
+                file = Request.Files["airline"];
+                string filename = file.FileName.ToString();
+                if (filename.Equals("") == false)
+                {
+                   
+                    var path = Path.Combine(Server.MapPath("~/Public/images/flight"), filename);
+                 
+                    file.SaveAs(path);
+                    mticket.airline = filename;
+                }
+              
+                  
+                mticket.created_at = DateTime.Now;
+                mticket.created_by = int.Parse(Session["Admin_id"].ToString());
+                
+                mticket.priceSale = mticket.price;
+                mticket.updated_at = DateTime.Now;
+                mticket.updated_by = int.Parse(Session["Admin_id"].ToString());
+                db.Entry(mticket).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.listticket = db.tickets.Where(m => m.status ==1).ToList();
+            return View(mticket);
+        }
 
 
     }

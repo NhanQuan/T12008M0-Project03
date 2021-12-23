@@ -657,6 +657,7 @@
     <Content Include="Areas\Admin\Views\Airport\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Airport\CreateCities.cshtml" />
     <Content Include="Areas\Admin\Views\Airport\trash.cshtml" />
+    <Content Include="Areas\Admin\Views\Tickets\Edit.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Site\flightSearchOnway.cshtml" />
