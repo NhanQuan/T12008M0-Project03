@@ -137,10 +137,11 @@ namespace BanVeMayBay.Controllers
                 var ticket2 = db.tickets.Find(id2);
                 ticket2.Sold = ticket2.Sold + order.guestTotal;
                 db.Entry(ticket2).State = EntityState.Modified;
+                db.SaveChanges();
             }
           
             
-           // db.SaveChanges();
+           
             return View("checkOutComfin", order);
         }
         // lay thong tin cac ve da book

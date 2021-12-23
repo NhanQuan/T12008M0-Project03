@@ -177,7 +177,15 @@ namespace BanVeMayBay.Controllers
                 ticket.Sold = ticket.Sold - item.quantity;
                 db.Entry(ticket).State = EntityState.Modified;
                 db.SaveChanges();
+                if (item == null)
+                {
+                    Message.set_flash("Error Cancel Order", "danger");
+                    return Redirect("~/tai-khoan");
+                }
+                  db.ordersdetails.Remove(item);
+                db.SaveChanges();
             }
+                  
             db.orders.Remove(morder);
             db.SaveChanges();
             Message.set_flash("Canceled 1 order", "success");
