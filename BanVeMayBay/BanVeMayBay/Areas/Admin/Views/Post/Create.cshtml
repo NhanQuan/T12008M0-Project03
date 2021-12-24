@@ -46,7 +46,7 @@
             {
                 @Html.AntiForgeryToken()
                 <div class=" row ">
-                    <div class="col-md-4">  </div>
+                    <div class="col-md-4"></div>
                     <div class="col-md-4"> <h3 class="text-center font-weight-bold text-success "> Add Posts</h3> </div>
                     <div class="col-md-4 ">
                         <div class="float-right">
@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 <div class=" row ">
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <div>
                             <label for="psw"><span class="text-secondary ">Post Title</span></label>
                             <input type="text" name="title" required class="form-control" />
@@ -73,7 +73,7 @@
                         </div>
 
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label for="psw"><span class="text-secondary ">Select the type of Post Type</span></label>
                         <div>
                             @Html.DropDownListFor(model => model.topid, listcat, new { @class = "form-control" })
@@ -105,7 +105,7 @@
 <script>
     $(document).ready(function (event) {
         $('.textarea').summernote({
-            height: 650,                 // set editor height
+            height: 400,                 // set editor height
             minHeight: null,             // set minimum height of editor
             maxHeight: null,             // set maximum height of editor
             focus: true                  // set focus to editable area after initializing summernote
