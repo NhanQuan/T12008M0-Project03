@@ -19,6 +19,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
         // GET: Admin/Tickets
         public ActionResult Index()
         {
+            ViewBag.list = db.ordersdetails.ToList();
             var tickets = db.tickets.Where(m => m.status != 0).ToList();
             ViewBag.tickets = tickets;
            

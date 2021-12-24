@@ -59,9 +59,9 @@
                                 <td><img style="width:50px;" src="~/public/images/flight/@Html.DisplayFor(modelItem => item.airline)"></td>
                                 <td>
 
-                                    @*@item.countryFlight.country*@
+                                    @item.city.cityName
                                 </td>
-                                <td width="15%">  @Html.DisplayFor(modelItem => item.toAirport)</td>
+                                <td width="15%">  @item.city1.cityName</td>
                                 <td style="font-size:14px;">@item.departure_date.Value.ToString("dd/MM/yyyy")</td>
                                 <td style="font-size:14px;">@item.price.Value.ToString("N0") $</td>
                                 <td>

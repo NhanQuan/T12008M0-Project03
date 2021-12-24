@@ -11,13 +11,15 @@ namespace BanVeMayBay.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class post
     {
         public int ID { get; set; }
         public Nullable<int> topid { get; set; }
         public string title { get; set; }
         public string slug { get; set; }
+        [Required(ErrorMessage = "Content is not blank")]
         public string detail { get; set; }
         public string img { get; set; }
         public string type { get; set; }
