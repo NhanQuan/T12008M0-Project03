@@ -20,10 +20,8 @@ namespace BanVeMayBay.Areas.Admin.Controllers
         public ActionResult Index()
         {
             ViewBag.list = db.ordersdetails.ToList();
-            var tickets = db.tickets.Where(m => m.status != 0).ToList();
+            var tickets = db.tickets.Where(m=>m.status ==1).ToList();
             ViewBag.tickets = tickets;
-           
-     
             return View();
         }
 

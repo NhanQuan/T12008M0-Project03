@@ -32,6 +32,7 @@ namespace BanVeMayBay.Models
         public virtual DbSet<ordersdetail> ordersdetails { get; set; }
         public virtual DbSet<post> posts { get; set; }
         public virtual DbSet<role> roles { get; set; }
+
         public virtual DbSet<ticket> tickets { get; set; }
         public virtual DbSet<topic> topics { get; set; }
         public virtual DbSet<user> users { get; set; }
