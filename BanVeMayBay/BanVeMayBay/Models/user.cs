@@ -11,7 +11,8 @@ namespace BanVeMayBay.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class user
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -27,7 +28,9 @@ namespace BanVeMayBay.Models
         public string password { get; set; }
         public string email { get; set; }
         public string gender { get; set; }
+        
         public string address { get; set; }
+        [RegularExpression(@"^(\+[0-9]{9})$", ErrorMessage = "Phone is invalid format")]
         public string phone { get; set; }
         public string img { get; set; }
         public int access { get; set; }

@@ -11,7 +11,8 @@ namespace BanVeMayBay.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -27,6 +28,7 @@ namespace BanVeMayBay.Models
         public string gioitinh { get; set; }
         public string quoctich { get; set; }
         public string mess { get; set; }
+        
         public string phone { get; set; }
         public string email { get; set; }
         public double total { get; set; }
