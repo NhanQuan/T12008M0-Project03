@@ -99,6 +99,8 @@ namespace BanVeMayBay.Areas.Admin.Controllers
                 ticket.Sold = ticket.Sold - item.quantity;
                 db.Entry(ticket).State = EntityState.Modified;
                 db.SaveChanges();
+                db.ordersdetails.Remove(item);
+                db.SaveChanges();
             }
             db.orders.Remove(morder);
             db.SaveChanges();

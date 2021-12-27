@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<BanVeMayBay.Models.ordersdetail>
 
 @{
     ViewBag.Title = "Index";
@@ -55,9 +55,8 @@
                     </thead>
                     <tbody>
 
-                        @foreach (var item1 in ViewBag.list)
-                        {
-                            foreach (var item in ViewBag.tickets)
+                       
+                            @foreach (var item in ViewBag.tickets)
                             {
                                 string name = item.name;
                                 <tr>
@@ -82,23 +81,21 @@
                                         }
 
 
-
-                                        @if (item.id != item1.ticketId)
+                                        @foreach (var item1 in Model)
                                         {
-                                        <a class="btn btn-sm btn-light text-danger border" href="@Url.Action("Deltrash", "Tickets", new { id = item.id })"> <i class="fas fa-trash-alt"></i></a>
+                                            if (item.id != item1.ticketId)
+                                            {
+                                            <a class="btn btn-sm btn-light text-danger border" href="@Url.Action("Deltrash", "Tickets", new { id = item.id })">
+                                        <i class="fas fa-trash-alt"></i></a>
+                                            }
                                         }
-
-
-
-                                        
-
-                                        <a class="btn btn-sm btn-light text-warning border" href="@Url.Action("Edit", "Tickets", new { id = item.id })">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                    </td>
+                                           <a class="btn btn-sm btn-light text-warning border" href="@Url.Action("Edit", "Tickets", new { id = item.id })">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                        </td>
 
                                 </tr>
-                            }
+                            
                         }
                         </tbody>
 
