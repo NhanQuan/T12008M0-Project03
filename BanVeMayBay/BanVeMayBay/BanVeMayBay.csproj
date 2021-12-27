@@ -690,6 +690,8 @@
     <Content Include="Views\Shared\_MessgeAlert.cshtml" />
     <Content Include="Views\Shared\401.cshtml" />
     <Content Include="Views\Checkout\Invalid.cshtml" />
+    <Content Include="Views\Modules\Slider.cshtml" />
+    <Content Include="Views\Modules\LogoSlide.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

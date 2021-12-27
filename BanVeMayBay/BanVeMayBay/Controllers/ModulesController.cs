@@ -33,5 +33,14 @@ namespace BanVeMayBay.Controllers
         {
             return View("_Footer");
         }
+
+        public ActionResult Slider()
+        {
+            return View("Slider");
+        }
+        public ActionResult LogoSlide()
+        {
+            return View("LogoSlide");
+        }
     }
 }

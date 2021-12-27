@@ -42,9 +42,11 @@
     </header>
     <!-- Header Ends -->
     <!-- Slider -->
+    @Html.Action("Slider", "Modules")
     <!-- End Slider -->
     @RenderBody()
     <!-- Top Destination Ends -->
+    @Html.Action("LogoSlide","Modules")
     <!-- Footer -->
     @Html.Action("_Footer", "Modules")
     <!-- Footer Ends -->
@@ -54,7 +56,7 @@
     </div>
     <!-- Back to top ends -->
     <!-- *Scripts* -->
- 
+
     <script src="~/public/js/bootstrap.min.js"></script>
     <script src="~/public/js/plugin.js"></script>
     <script src="~/public/js/main.js"></script>
