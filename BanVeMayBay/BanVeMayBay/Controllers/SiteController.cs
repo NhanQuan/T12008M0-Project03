@@ -93,7 +93,7 @@ namespace BanVeMayBay.Controllers
         public ActionResult AllChuyenBay(int? page)
         {
             if (page == null) page = 1;
-            int pageSize = 4;
+            int pageSize = 10;
             var singleC = db.topics.Where(m => m.status == 1).Where(m => m.status == 1).First();
             ViewBag.url = "all-chuyen-bay";
             int pageNumber = (page ?? 1);
