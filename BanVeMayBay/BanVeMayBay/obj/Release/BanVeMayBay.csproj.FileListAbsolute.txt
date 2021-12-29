@@ -54,3 +54,4 @@ C:\Users\ADMIN\Desktop\Airlines Reservation System\SRC\T12008M0-Project03\T12008
 C:\Users\ADMIN\Desktop\Airlines Reservation System\SRC\T12008M0-Project03\T12008M0-Project03\BanVeMayBay\BanVeMayBay\obj\Release\BanVeMayBay.csproj.CopyComplete
 C:\Users\ADMIN\Desktop\Airlines Reservation System\SRC\T12008M0-Project03\T12008M0-Project03\BanVeMayBay\BanVeMayBay\obj\Release\BanVeMayBay.dll
 C:\Users\ADMIN\Desktop\Airlines Reservation System\SRC\T12008M0-Project03\T12008M0-Project03\BanVeMayBay\BanVeMayBay\obj\Release\BanVeMayBay.pdb
+C:\Users\ADMIN\Desktop\Airlines Reservation System\SRC\T12008M0-Project03\T12008M0-Project03\BanVeMayBay\BanVeMayBay\obj\Release\BanVeMayBay.csproj.AssemblyReference.cache
