@@ -25,7 +25,8 @@
                         </div>
                         <div>
                             <label for="email">Phone</label>
-                            <input class="mb-0 form-control" type="tel" name="phone" placeholder="Phone" required>
+                            <input class="mb-0 form-control" type="tel" name="phone" placeholder="Phone"  required
+           pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
                             <span asp-validation-for="phone" class="text-danger"></span>
                         </div>
                         <div>

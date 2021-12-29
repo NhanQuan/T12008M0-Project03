@@ -81,18 +81,18 @@
                                         }
 
 
-                                        @foreach (var item1 in Model)
-                                        {
-                                            if (item.id != item1.ticketId)
+                                      
+                                            @if (item.Sold == 0)
                                             {
-                                            <a class="btn btn-sm btn-light text-danger border" href="@Url.Action("Deltrash", "Tickets", new { id = item.id })">
-                                        <i class="fas fa-trash-alt"></i></a>
-                                            }
+                                                <a class="btn btn-sm btn-light text-danger border" href="@Url.Action("Deltrash", "Tickets", new { id = item.id})">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </a>
+                                           
                                         }
-                                           <a class="btn btn-sm btn-light text-warning border" href="@Url.Action("Edit", "Tickets", new { id = item.id })">
-                                                <i class="fas fa-edit"></i>
-                                            </a>
-                                        </td>
+                                        <a class="btn btn-sm btn-light text-warning border" href="@Url.Action("Edit", "Tickets", new { id = item.id })">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                    </td>
 
                                 </tr>
                             
