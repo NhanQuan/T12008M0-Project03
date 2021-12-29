@@ -30,7 +30,6 @@ namespace BanVeMayBay.Models
         public string gender { get; set; }
         
         public string address { get; set; }
-        [RegularExpression(@"^(\+[0-9]{9})$", ErrorMessage = "Phone is invalid format")]
         public string phone { get; set; }
         public string img { get; set; }
         public int access { get; set; }
