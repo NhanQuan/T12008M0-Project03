@@ -692,6 +692,7 @@
     <Content Include="Views\Checkout\Invalid.cshtml" />
     <Content Include="Views\Modules\Slider.cshtml" />
     <Content Include="Views\Modules\LogoSlide.cshtml" />
+    <Content Include="Views\Shared\_LayOutSiteHeader.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
