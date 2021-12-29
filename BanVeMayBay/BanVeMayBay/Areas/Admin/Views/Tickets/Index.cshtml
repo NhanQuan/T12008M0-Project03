@@ -79,17 +79,26 @@
                                         {
                                             <a class="btn btn-sm btn-light text-danger border a33" href="@Url.Action("Status", "Tickets", new { id = item.id })"> <i class="fas fa-toggle-off"></i> </a>
                                         }
-
-
-                                        @foreach (var item1 in Model)
+                                        @foreach (var item1 in item.ordersdetails)
                                         {
-                                            if (item.id != item1.ticketId)
+                                            <a class="btn btn-sm btn-light text-danger hidden border" href="@Url.Action("Deltrash", "Tickets", new { id = item.id,oid=item1.ticketId })">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                            break;
+
+                                        }
+
+                                        @foreach (var item2 in item.ordersdetails)
+                                        {
+                                            if (item.id == item2.ticketId)
                                             {
-                                            <a class="btn btn-sm btn-light text-danger border" href="@Url.Action("Deltrash", "Tickets", new { id = item.id })">
-                                        <i class="fas fa-trash-alt"></i></a>
+                                                <a class="btn btn-sm btn-light text-danger hidden border" href="@Url.Action("Deltrash", "Tickets", new { id = item.id, oid = 0 })">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </a>
                                             }
                                         }
-                                           <a class="btn btn-sm btn-light text-warning border" href="@Url.Action("Edit", "Tickets", new { id = item.id })">
+
+                                            <a class="btn btn-sm btn-light text-warning border" href="@Url.Action("Edit", "Tickets", new { id = item.id })">
                                                 <i class="fas fa-edit"></i>
                                             </a>
                                         </td>

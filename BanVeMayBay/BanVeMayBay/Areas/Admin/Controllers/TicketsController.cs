@@ -23,7 +23,7 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             var tickets = db.tickets.Where(m=>m.status == 1).ToList();
             ViewBag.tickets = tickets;
             
-            return View(db.ordersdetails.ToList());
+            return View();
         }
 
     
@@ -99,20 +99,32 @@ namespace BanVeMayBay.Areas.Admin.Controllers
             return View("Trash", list);
         }
         [CustomAuthorizeAttribute(RoleID = "ADMIN")]
-        public ActionResult Deltrash(int id)
+        public ActionResult Deltrash(int id, int oid)
         {
+       
             ticket morder = db.tickets.Find(id);
-            morder.status = 0;
-            db.Entry(morder).State = EntityState.Modified;
-            db.SaveChanges();
-            Message.set_flash("Delete successfully", "success");
-            return RedirectToAction("Index");
+            
+            if (morder.id != oid)
+            {
+                morder.status = 0;
+                db.Entry(morder).State = EntityState.Modified;
+                db.SaveChanges();
+                Message.set_flash("Delete successfully", "success");
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                Message.set_flash("Tickets already purchased cannot be deleted", "danger");
+                return RedirectToAction("Index");
+            }
+           
         }
+       
         [CustomAuthorizeAttribute(RoleID = "ADMIN")]
         public ActionResult Retrash(int id)
         {
             ticket morder = db.tickets.Find(id);
-            morder.status = 2;
+            morder.status = 1;
             db.Entry(morder).State = EntityState.Modified;
             db.SaveChanges();
             Message.set_flash("Successful recovery", "success");
