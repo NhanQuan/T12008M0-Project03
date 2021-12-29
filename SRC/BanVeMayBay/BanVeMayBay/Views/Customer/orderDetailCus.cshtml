@@ -17,6 +17,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="confirmation-details detail">
+
                                         <h3>Deatil Booking</h3>
                                         <table>
                                             <tbody>
@@ -74,7 +75,7 @@
 
                 </div>
             </div>
-                <div class="col-md-4" style="margin-top: 90px;left:60px">
+                <div class="col-md-4" style="margin-top: 120px;left:10px">
                     @Html.Action("_BookingConnfig", "Checkout", new { orderId = Model.ID })
                     <h3> Total: @Model.total.ToString("N0") $</h3>
 
