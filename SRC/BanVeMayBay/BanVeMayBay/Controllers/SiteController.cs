@@ -126,7 +126,7 @@ namespace BanVeMayBay.Controllers
             int pageSize = 4;
             int pageNumber = (page ?? 1);
             ViewBag.url = "tim-kiem-bai-viet?keyw=" + keyw + "";
-            @ViewBag.nameTopic = "Tim kiếm từ khóa: " + keyw;
+            @ViewBag.nameTopic = "Search Key: " + keyw;
             var list = db.posts.Where(m => m.title.Contains(keyw) || m.detail.Contains(keyw)).Where(m => m.status == 1).OrderBy(m => m.ID);
             return View("postOftoPic", list.ToList().ToPagedList(pageNumber, pageSize));
         }
