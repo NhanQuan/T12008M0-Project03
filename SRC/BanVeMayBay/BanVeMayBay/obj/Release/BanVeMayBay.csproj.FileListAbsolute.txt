@@ -166,6 +166,5 @@ D:\FPT\T12008M0-Project03\SRC\BanVeMayBay\BanVeMayBay\bin\System.Web.Mvc.xml
 D:\FPT\T12008M0-Project03\SRC\BanVeMayBay\BanVeMayBay\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\FPT\T12008M0-Project03\SRC\BanVeMayBay\BanVeMayBay\obj\Release\BanVeMayBay.csproj.AssemblyReference.cache
 D:\FPT\T12008M0-Project03\SRC\BanVeMayBay\BanVeMayBay\obj\Release\BanVeMayBay.csproj.CoreCompileInputs.cache
-D:\FPT\T12008M0-Project03\SRC\BanVeMayBay\BanVeMayBay\obj\Release\BanVeMayBay.csproj.CopyComplete
 D:\FPT\T12008M0-Project03\SRC\BanVeMayBay\BanVeMayBay\obj\Release\BanVeMayBay.dll
 D:\FPT\T12008M0-Project03\SRC\BanVeMayBay\BanVeMayBay\obj\Release\BanVeMayBay.pdb
