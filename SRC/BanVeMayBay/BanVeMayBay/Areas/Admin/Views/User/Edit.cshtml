@@ -52,7 +52,7 @@
                 @Html.AntiForgeryToken()
                 @Html.HiddenFor(model => model.ID)
                 @Html.HiddenFor(model => model.created_at)
-                @Html.HiddenFor(model => model.address)
+                //@Html.HiddenFor(model => model.address)
                 @Html.HiddenFor(model => model.created_by)
                 @Html.HiddenFor(model => model.img)
                 @Html.HiddenFor(model => model.password)
@@ -71,7 +71,7 @@
                 <div class=" row ">
                     <div class="col-md-8">
                         <div>
-                            <label for="psw"><span class=" ">Passenger</span></label>
+                            <label for="psw"><span class=" ">Fullname</span></label>
                             @Html.EditorFor(model => model.fullname, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.fullname, "", new { @class = "text-danger" })
                         </div>
@@ -85,6 +85,11 @@
                             <label for="psw"><span class=" ">Email</span></label>
                             @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                        </div>
+                        <div>
+                            <label for="psw"><span class=" ">Address</span></label>
+                            @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
                         </div>
                         <div>
                             <label for="psw"><span class=" ">Phone</span></label>
